@@ -6,9 +6,11 @@ from discord.ext import tasks
 from keep_alive import keep_alive
 
 test_channel_id_general = 639512541701079073
-channel_id = test_channel_id_general
+test_wallet = "0x7c3d72a477f3d36a34c68990a9e62a48c0331710"
 nanopool_api_addr = "https://api.nanopool.org/v1/eth/workers/"
-eth_wallet = "0x7c3d72a477f3d36a34c68990a9e62a48c0331710"
+
+channel_id = test_channel_id_general
+eth_wallet = test_wallet
 pool_api_addr = nanopool_api_addr
 
 url = pool_api_addr + eth_wallet
@@ -25,7 +27,7 @@ async def on_message(message):
   if message.content.startswith("$list"):
     msg = ""
     for key, value in worker_dict.items():
-      msg += key + " has "
+      msg += key + " has " 
       msg += str(sum(value))
       msg += " shares.\n"
     await client.get_channel(channel_id).send(msg)
