@@ -190,7 +190,7 @@ async def on_message(message):
         print(res["data"])
         total = workers.get_total_shares()
         worker_names = workers.get_workers()
-        msg = "Current Balance is {}\n".format(balance)
+        msg = "Current Balance is {}, ETH price in USD {}\n".format(balance, eth_in_usd)
         for worker_name in worker_names:
             worker_share = workers.get_shares(worker_name)
             share_ratio = worker_share / total
@@ -202,7 +202,6 @@ async def on_message(message):
 
 @tasks.loop(seconds=5)
 async def fetch_data():
-    print(workers.get())
     online_workers = fetch_workers()
     old = set(workers.get_online_workers())
     new = set(online_workers)
@@ -221,32 +220,30 @@ async def fetch_data():
     
     for name in workers.get_online_workers():
         if name not in workers.get():
-            await client.get_channel(channel_id).send("welcome new worker: " +
-                                                      name)
+            await client.get_channel(channel_id).send("welcome new worker: " + name)
             workers.set(name)
 
-        payload2 = {'currency': 'ETH', 'miner': eth_wallet, 'worker': name}
-        r2 = requests.get(pool_api_addr + "/v1/worker/sharesHistory", params=payload2)
-        if r2.status_code != 200:
+        payload = {'currency': 'ETH', 'miner': eth_wallet, 'worker': name}
+        r = requests.get(pool_api_addr + "/v1/worker/sharesHistory", params=payload)
+        if r.status_code != 200:
             return
-        res2 = json.loads(r2.text)
-        if res2["code"] != 200:
+        res = json.loads(r.text)
+        if res["code"] != 200:
             return
+        
         shares_delta = 0
         latest_time = start_ts
         has_change = False
-        for entry in res2["data"]:
-            if str_to_ts(entry["time"]) > str_to_ts(
-                    workers.get_latest_time(name)):
+        for entry in res["data"]:
+            if str_to_ts(entry["time"]) > str_to_ts(workers.get_latest_time(name)):
                 has_change = True
                 shares_delta += entry["validShares"]
-                latest_time = entry["time"] if str_to_ts(
-                    entry["time"]) > str_to_ts(latest_time) else latest_time
+                latest_time = entry["time"] if str_to_ts(entry["time"]) > str_to_ts(latest_time) else latest_time
+                print("{} new shares for worker {} received, report at {}\n".format(entry["validShares"], name, entry["time"]))
         if has_change:
             if shares_delta and workers.update_to_channel:
-                await client.get_channel(channel_id).send(
-                    name + "'s share: " + str(workers.get_shares(name)) +
-                    " -> " + str(workers.get_shares(name) + shares_delta))
+                msg = "{}'s share: {}(+{}) -> {}\n".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
+                await client.get_channel(channel_id).send(msg)
             workers.update(name, shares_delta, latest_time)
 
 
