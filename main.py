@@ -46,9 +46,6 @@ class worker_dict:
         self.online_workers = []
         self.update_to_channel = True
 
-    def get(self):
-        return self.d
-
     def get_total_shares(self):
         return sum([value["shares"] for _ , value in self.d.items()])
 
@@ -63,15 +60,34 @@ class worker_dict:
         if name in self.d:
             return self.d[name]["latest_time"]
 
+    def get_history(self, name):
+        if name in self.d and "history" in self.d[name]:
+            return self.d[name]["history"]
+        else:
+            return None
+    
+    def pop_entry_from_history(self, name, ts):
+        if name in self.d and "history" in self.d[name]:
+            return self.d[name]["history"].pop(ts, None)
+        else:
+            return None
+    
+    def set_entry_to_history(self, name, ts, shares):
+        if name in self.d and "history" in self.d[name]:
+            self.d[name]["history"][ts] = shares
+        else:
+            return None
+            
     def set(self, name, shares=0, ts=start_ts):
-        self.d[name] = {"shares": shares, "latest_time": ts}
-        self.dump_to_file()
+        self.d[name] = {"shares": shares, "latest_time": ts, "history": {}}
+        # self.dump_to_file()
 
-    def update(self, name, new_shares, ts):
+    def update_share_and_ts(self, name, new_shares, ts=None):
         if name in self.d:
             self.d[name]["shares"] += new_shares
-            self.d[name]["latest_time"] = ts
-            self.dump_to_file()
+            if ts:
+                self.d[name]["latest_time"] = ts
+            # self.dump_to_file()
 
     def set_online_workers(self, lst):
         self.online_workers = lst
@@ -93,6 +109,7 @@ class worker_dict:
         try:
             with open("local_log.json", "w") as f:
                 json.dump(self.d, f)
+                f.flush()
         except Exception as e:
             print(e)
             print("dump failed")
@@ -117,14 +134,14 @@ workers = worker_dict()
 client = discord.Client()
 
 def fetch_workers():
-    payload1 = {'currency': 'ETH', 'miner': eth_wallet}
-    r1 = requests.get(pool_api_addr + "/v1/worker/list", params=payload1)
-    if r1.status_code != 200:
+    payload = {'currency': 'ETH', 'miner': eth_wallet}
+    r = requests.get(pool_api_addr + "/v1/worker/list", params=payload)
+    if r.status_code != 200:
         return
-    res1 = json.loads(r1.text)
-    if res1["code"] != 200:
+    res = json.loads(r.text)
+    if res["code"] != 200:
         return
-    return [worker["worker"] for worker in res1["data"]]
+    return [worker["worker"] for worker in res["data"]]
 
 
 @client.event
@@ -202,6 +219,7 @@ async def on_message(message):
 
 @tasks.loop(seconds=5)
 async def fetch_data():
+    ## check and notify online/offline status
     online_workers = fetch_workers()
     old = set(workers.get_online_workers())
     new = set(online_workers)
@@ -218,11 +236,18 @@ async def fetch_data():
         await client.get_channel(channel_id).send(msg)
     workers.set_online_workers(online_workers)
     
-    for name in workers.get_online_workers():
-        if name not in workers.get():
-            await client.get_channel(channel_id).send("welcome new worker: " + name)
-            workers.set(name)
 
+    res_log = open("res_log", "a")
+    has_change = False
+    for name in workers.get_online_workers():
+
+        ## init new worker if found
+        if name not in workers.get_workers():
+            workers.set(name)
+            has_change = True
+            await client.get_channel(channel_id).send("welcome new worker: " + name)
+
+        ## get current worker share history
         payload = {'currency': 'ETH', 'miner': eth_wallet, 'worker': name}
         r = requests.get(pool_api_addr + "/v1/worker/sharesHistory", params=payload)
         if r.status_code != 200:
@@ -231,20 +256,80 @@ async def fetch_data():
         if res["code"] != 200:
             return
         
-        shares_delta = 0
-        latest_time = start_ts
-        has_change = False
-        for entry in res["data"]:
-            if str_to_ts(entry["time"]) > str_to_ts(workers.get_latest_time(name)):
-                has_change = True
-                shares_delta += entry["validShares"]
-                latest_time = entry["time"] if str_to_ts(entry["time"]) > str_to_ts(latest_time) else latest_time
-                print("{} new shares for worker {} received, report at {}\n".format(entry["validShares"], name, entry["time"]))
-        if has_change:
-            if shares_delta and workers.update_to_channel:
-                msg = "{}'s share: {}(+{}) -> {}\n".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
+        
+        # validate all history entry/ remove outdated ones
+        history = workers.get_history(name)
+        if history:
+            ts_lst = list(history.keys())
+            res_history = {entry["time"]: entry["validShares"]  for entry in res["data"]}
+            adjustment_log = []
+            adjustment_delta = 0
+            for ts in ts_lst:
+                if ts not in res_history:
+                    ## remove outdated entry
+                    has_change = True
+                    if not workers.pop_entry_from_history(name, ts):
+                        print("Error: old entry removal failed")
+                else:
+                    new_share = res_history[ts]
+                    share_in_record = history[ts]
+                    if new_share != share_in_record:
+                        has_change = True
+                        adjustment_log.append((ts, share_in_record, new_share))
+                        adjustment_delta += new_share - share_in_record
+                        workers.set_entry_to_history(name, ts, new_share)
+
+            if adjustment_log and workers.update_to_channel:
+                msg = "{} share change detected\n".format(name)
+                for ts, old_share, new_share in adjustment_log:
+                    sign = ""
+                    if new_share - old_share >= 0:
+                        sign = "+"
+                    msg += "    {} shares @ {} adjusted to {}({}{})\n".format(old_share, ts, new_share, sign, new_share - old_share)
+                msg += "total adjustment: {}\n".format(adjustment_delta)
                 await client.get_channel(channel_id).send(msg)
-            workers.update(name, shares_delta, latest_time)
+                print(msg)
+                res_log.write(msg)
+        
+            workers.update_share_and_ts(name, adjustment_delta)
+        else:
+            workers.d[name]["history"] = {}
+        
+        # test_share_sum = 0
+        shares_delta = 0
+        latest_time = workers.get_latest_time(name)
+        for entry in res["data"]:
+            ts = entry["time"]
+            share = entry["validShares"]
+            # test_share_sum += share
+            if str_to_ts(ts) > str_to_ts(workers.get_latest_time(name)):
+                has_change = True
+                workers.set_entry_to_history(name, ts, share)
+                shares_delta += share
+                latest_time = ts if str_to_ts(ts) > str_to_ts(latest_time) else latest_time
+                
+                msg = "{} + {} @ {}\n".format(name, share, ts)
+                msg += "    res body: {}".format(str(entry))
+                print(msg)
+                res_log.write(msg + "\n")
+                # print("{} new shares for worker {} received, report at {}".format(share, name, ts))
+        
+        
+        # print("test share sum {} for {}; ".format(test_share_sum, name), end="", flush=True)
+        if shares_delta and workers.update_to_channel:
+            msg = "{}'s share: {}(+{}) -> {}".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
+            await client.get_channel(channel_id).send(msg)
+            print(msg)
+            res_log.write(msg + "\n\n")
+        
+        workers.update_share_and_ts(name, shares_delta, latest_time)
+
+
+    if has_change:
+        workers.dump_to_file()
+    
+    res_log.flush()
+    res_log.close()
 
 
 keep_alive()
