@@ -264,3 +264,51 @@ total adjustment: -1
 mileyzdy share change detected
     15 shares @ 2021-09-13T03:50:00.000Z adjusted to 16(+1)
 total adjustment: 1
+mileyzdy + 6 @ 2021-09-13T04:10:00.000Z
+    res body: {'time': '2021-09-13T04:10:00.000Z', 'hashrate': '40000000', 'localHashrate': '81194914', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '74825175'}
+mileyzdy's share: 2330(+6) -> 2336
+
+mileyzdy + 6 @ 2021-09-13T04:20:00.000Z
+    res body: {'time': '2021-09-13T04:20:00.000Z', 'hashrate': '40000000', 'localHashrate': '80152317', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '74825175'}
+mileyzdy's share: 2336(+6) -> 2342
+
+mileyzdy + 14 @ 2021-09-13T04:30:00.000Z
+    res body: {'time': '2021-09-13T04:30:00.000Z', 'hashrate': '93333333', 'localHashrate': '79757271', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75291375'}
+mileyzdy's share: 2342(+14) -> 2356
+
+mileyzdy + 12 @ 2021-09-13T04:40:00.000Z
+    res body: {'time': '2021-09-13T04:40:00.000Z', 'hashrate': '80000000', 'localHashrate': '80321929', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75664336'}
+mileyzdy's share: 2356(+12) -> 2368
+
+mileyzdy + 10 @ 2021-09-13T04:50:00.000Z
+    res body: {'time': '2021-09-13T04:50:00.000Z', 'hashrate': '66666667', 'localHashrate': '80880400', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75757576'}
+mileyzdy's share: 2368(+10) -> 2378
+
+mileyzdy share change detected
+    15 shares @ 2021-09-13T03:50:00.000Z adjusted to 16(+1)
+    11 shares @ 2021-09-13T04:00:00.000Z adjusted to 10(-1)
+total adjustment: 0
+mileyzdy + 14 @ 2021-09-13T05:00:00.000Z
+    res body: {'time': '2021-09-13T05:00:00.000Z', 'hashrate': '93333333', 'localHashrate': '81181313', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76130536'}
+mileyzdy's share: 2378(+14) -> 2392
+
+mileyzdy + 16 @ 2021-09-13T05:10:00.000Z
+    res body: {'time': '2021-09-13T05:10:00.000Z', 'hashrate': '106666667', 'localHashrate': '81058575', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76689977'}
+mileyzdy's share: 2392(+16) -> 2408
+
+mileyzdy + 12 @ 2021-09-13T05:20:00.000Z
+    res body: {'time': '2021-09-13T05:20:00.000Z', 'hashrate': '80000000', 'localHashrate': '80685143', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76689977'}
+mileyzdy's share: 2408(+12) -> 2420
+
+mileyzdy + 6 @ 2021-09-13T05:30:00.000Z
+    res body: {'time': '2021-09-13T05:30:00.000Z', 'hashrate': '46666667', 'localHashrate': '81071750', 'validShares': 6, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '76270396'}
+mileyzdy's share: 2420(+6) -> 2426
+
+mileyzdy + 10 @ 2021-09-13T05:40:00.000Z
+    res body: {'time': '2021-09-13T05:40:00.000Z', 'hashrate': '66666667', 'localHashrate': '80257300', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76270396'}
+mileyzdy's share: 2426(+10) -> 2436
+
+mileyzdy + 10 @ 2021-09-13T05:50:00.000Z
+    res body: {'time': '2021-09-13T05:50:00.000Z', 'hashrate': '66666667', 'localHashrate': '81076567', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76270396'}
+mileyzdy's share: 2436(+10) -> 2446
+

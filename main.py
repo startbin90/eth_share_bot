@@ -259,41 +259,38 @@ async def fetch_data():
         
         # validate all history entry/ remove outdated ones
         history = workers.get_history(name)
-        if history:
-            ts_lst = list(history.keys())
-            res_history = {entry["time"]: entry["validShares"]  for entry in res["data"]}
-            adjustment_log = []
-            adjustment_delta = 0
-            for ts in ts_lst:
-                if ts not in res_history:
-                    ## remove outdated entry
+        ts_lst = list(history.keys())
+        res_history = {entry["time"]: entry["validShares"] for entry in res["data"]}
+        adjustment_log = []
+        adjustment_delta = 0
+        for ts in ts_lst:
+            if ts not in res_history:
+                ## remove outdated entry
+                has_change = True
+                if not workers.pop_entry_from_history(name, ts):
+                    print("Error: old entry removal failed")
+            else:
+                new_share = res_history[ts]
+                share_in_record = history[ts]
+                if new_share != share_in_record:
                     has_change = True
-                    if not workers.pop_entry_from_history(name, ts):
-                        print("Error: old entry removal failed")
-                else:
-                    new_share = res_history[ts]
-                    share_in_record = history[ts]
-                    if new_share != share_in_record:
-                        has_change = True
-                        adjustment_log.append((ts, share_in_record, new_share))
-                        adjustment_delta += new_share - share_in_record
-                        workers.set_entry_to_history(name, ts, new_share)
+                    adjustment_log.append((ts, share_in_record, new_share))
+                    adjustment_delta += new_share - share_in_record
+                    workers.set_entry_to_history(name, ts, new_share)
 
-            if adjustment_log and workers.update_to_channel:
-                msg = "{} share change detected\n".format(name)
-                for ts, old_share, new_share in adjustment_log:
-                    sign = ""
-                    if new_share - old_share >= 0:
-                        sign = "+"
-                    msg += "    {} shares @ {} adjusted to {}({}{})\n".format(old_share, ts, new_share, sign, new_share - old_share)
-                msg += "total adjustment: {}\n".format(adjustment_delta)
-                await client.get_channel(channel_id).send(msg)
-                print(msg)
-                res_log.write(msg)
-        
-            workers.update_share_and_ts(name, adjustment_delta)
-        else:
-            workers.d[name]["history"] = {}
+        if adjustment_log and workers.update_to_channel:
+            msg = "{} share change detected\n".format(name)
+            for ts, old_share, new_share in adjustment_log:
+                sign = ""
+                if new_share - old_share >= 0:
+                    sign = "+"
+                msg += "    {} shares @ {} adjusted to {}({}{})\n".format(old_share, ts, new_share, sign, new_share - old_share)
+            msg += "total adjustment: {}\n".format(adjustment_delta)
+            await client.get_channel(channel_id).send(msg)
+            print(msg)
+            res_log.write(msg)
+    
+        workers.update_share_and_ts(name, adjustment_delta)
         
         # test_share_sum = 0
         shares_delta = 0
