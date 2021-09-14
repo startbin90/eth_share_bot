@@ -312,3 +312,1287 @@ mileyzdy + 10 @ 2021-09-13T05:50:00.000Z
     res body: {'time': '2021-09-13T05:50:00.000Z', 'hashrate': '66666667', 'localHashrate': '81076567', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76270396'}
 mileyzdy's share: 2436(+10) -> 2446
 
+mileyzdy + 20 @ 2021-09-13T06:00:00.000Z
+    res body: {'time': '2021-09-13T06:00:00.000Z', 'hashrate': '133333333', 'localHashrate': '80985375', 'validShares': 20, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76960000'}
+mileyzdy + 10 @ 2021-09-13T06:10:00.000Z
+    res body: {'time': '2021-09-13T06:10:00.000Z', 'hashrate': '66666667', 'localHashrate': '80670314', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76878307'}
+mileyzdy + 16 @ 2021-09-13T06:20:00.000Z
+    res body: {'time': '2021-09-13T06:20:00.000Z', 'hashrate': '106666667', 'localHashrate': '78984525', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '77112861'}
+mileyzdy + 12 @ 2021-09-13T06:30:00.000Z
+    res body: {'time': '2021-09-13T06:30:00.000Z', 'hashrate': '80000000', 'localHashrate': '80564529', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '77135417'}
+mileyzdy + 14 @ 2021-09-13T06:40:00.000Z
+    res body: {'time': '2021-09-13T06:40:00.000Z', 'hashrate': '93333333', 'localHashrate': '81228500', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '77260982'}
+mileyzdy + 0 @ 2021-09-13T06:50:00.000Z
+    res body: {'time': '2021-09-13T06:50:00.000Z', 'hashrate': '0', 'localHashrate': '81857300', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76666667'}
+mileyzdy + 10 @ 2021-09-13T07:00:00.000Z
+    res body: {'time': '2021-09-13T07:00:00.000Z', 'hashrate': '66666667', 'localHashrate': '80860275', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76590331'}
+mileyzdy + 8 @ 2021-09-13T07:10:00.000Z
+    res body: {'time': '2021-09-13T07:10:00.000Z', 'hashrate': '53333333', 'localHashrate': '80966356', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76414141'}
+mileyzdy + 10 @ 2021-09-13T07:20:00.000Z
+    res body: {'time': '2021-09-13T07:20:00.000Z', 'hashrate': '66666667', 'localHashrate': '73579843', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76340852'}
+mileyzdy + 8 @ 2021-09-13T07:30:00.000Z
+    res body: {'time': '2021-09-13T07:30:00.000Z', 'hashrate': '53333333', 'localHashrate': '74679733', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76169154'}
+mileyzdy + 10 @ 2021-09-13T07:40:00.000Z
+    res body: {'time': '2021-09-13T07:40:00.000Z', 'hashrate': '66666667', 'localHashrate': '75739850', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76098765'}
+mileyzdy + 12 @ 2021-09-13T07:50:00.000Z
+    res body: {'time': '2021-09-13T07:50:00.000Z', 'hashrate': '80000000', 'localHashrate': '74468757', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '76127451'}
+mileyzdy + 4 @ 2021-09-13T08:00:00.000Z
+    res body: {'time': '2021-09-13T08:00:00.000Z', 'hashrate': '26666667', 'localHashrate': '74775467', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75766423'}
+mileyzdy + 10 @ 2021-09-13T08:10:00.000Z
+    res body: {'time': '2021-09-13T08:10:00.000Z', 'hashrate': '73333333', 'localHashrate': '74581817', 'validShares': 10, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '75748792'}
+mileyzdy + 14 @ 2021-09-13T08:20:00.000Z
+    res body: {'time': '2021-09-13T08:20:00.000Z', 'hashrate': '93333333', 'localHashrate': '74527857', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75875300'}
+mileyzdy + 8 @ 2021-09-13T08:30:00.000Z
+    res body: {'time': '2021-09-13T08:30:00.000Z', 'hashrate': '53333333', 'localHashrate': '74640050', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75714286'}
+mileyzdy + 10 @ 2021-09-13T08:40:00.000Z
+    res body: {'time': '2021-09-13T08:40:00.000Z', 'hashrate': '66666667', 'localHashrate': '75409629', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75650118'}
+mileyzdy + 6 @ 2021-09-13T08:50:00.000Z
+    res body: {'time': '2021-09-13T08:50:00.000Z', 'hashrate': '40000000', 'localHashrate': '75191850', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75399061'}
+mileyzdy + 8 @ 2021-09-13T09:00:00.000Z
+    res body: {'time': '2021-09-13T09:00:00.000Z', 'hashrate': '53333333', 'localHashrate': '75485800', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '75244755'}
+mileyzdy's share: 2446(+190) -> 2636
+
+mileyzdy + 6 @ 2021-09-13T09:10:00.000Z
+    res body: {'time': '2021-09-13T09:10:00.000Z', 'hashrate': '40000000', 'localHashrate': '73816657', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '74685315'}
+mileyzdy's share: 2636(+6) -> 2642
+
+mileyzdy + 2 @ 2021-09-13T09:20:00.000Z
+    res body: {'time': '2021-09-13T09:20:00.000Z', 'hashrate': '13333333', 'localHashrate': '74958243', 'validShares': 2, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '74125874'}
+mileyzdy's share: 2642(+2) -> 2644
+
+mileyzdy + 6 @ 2021-09-13T09:30:00.000Z
+    res body: {'time': '2021-09-13T09:30:00.000Z', 'hashrate': '40000000', 'localHashrate': '75403983', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73752914'}
+mileyzdy's share: 2644(+6) -> 2650
+
+mileyzdy + 10 @ 2021-09-13T09:40:00.000Z
+    res body: {'time': '2021-09-13T09:40:00.000Z', 'hashrate': '66666667', 'localHashrate': '74605425', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73659674'}
+mileyzdy's share: 2650(+10) -> 2660
+
+mileyzdy + 4 @ 2021-09-13T09:50:00.000Z
+    res body: {'time': '2021-09-13T09:50:00.000Z', 'hashrate': '26666667', 'localHashrate': '74109667', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73473193'}
+mileyzdy's share: 2660(+4) -> 2664
+
+mileyzdy + 14 @ 2021-09-13T10:00:00.000Z
+    res body: {'time': '2021-09-13T10:00:00.000Z', 'hashrate': '93333333', 'localHashrate': '74305886', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73193473'}
+mileyzdy's share: 2664(+14) -> 2678
+
+mileyzdy + 12 @ 2021-09-13T10:20:00.000Z
+    res body: {'time': '2021-09-13T10:20:00.000Z', 'hashrate': '80000000', 'localHashrate': '74600583', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73427230'}
+mileyzdy's share: 2678(+12) -> 2690
+
+mileyzdy + 18 @ 2021-09-13T10:30:00.000Z
+    res body: {'time': '2021-09-13T10:30:00.000Z', 'hashrate': '120000000', 'localHashrate': '75561143', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73286713'}
+mileyzdy's share: 2690(+18) -> 2708
+
+mileyzdy + 12 @ 2021-09-13T10:40:00.000Z
+    res body: {'time': '2021-09-13T10:40:00.000Z', 'hashrate': '80000000', 'localHashrate': '74828413', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73286713'}
+mileyzdy's share: 2708(+12) -> 2720
+
+mileyzdy + 14 @ 2021-09-13T10:50:00.000Z
+    res body: {'time': '2021-09-13T10:50:00.000Z', 'hashrate': '93333333', 'localHashrate': '74554029', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73566434'}
+mileyzdy's share: 2720(+14) -> 2734
+
+mileyzdy + 4 @ 2021-09-13T11:00:00.000Z
+    res body: {'time': '2021-09-13T11:00:00.000Z', 'hashrate': '26666667', 'localHashrate': '74987729', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73286713'}
+mileyzdy's share: 2734(+4) -> 2738
+
+mileyzdy + 8 @ 2021-09-13T11:10:00.000Z
+    res body: {'time': '2021-09-13T11:10:00.000Z', 'hashrate': '53333333', 'localHashrate': '75121075', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73566434'}
+mileyzdy's share: 2738(+8) -> 2746
+
+mileyzdy + 10 @ 2021-09-13T11:20:00.000Z
+    res body: {'time': '2021-09-13T11:20:00.000Z', 'hashrate': '66666667', 'localHashrate': '75162588', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73939394'}
+mileyzdy's share: 2746(+10) -> 2756
+
+mileyzdy + 8 @ 2021-09-13T11:30:00.000Z
+    res body: {'time': '2021-09-13T11:30:00.000Z', 'hashrate': '53333333', 'localHashrate': '74718438', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73846154'}
+mileyzdy's share: 2756(+8) -> 2764
+
+mileyzdy + 14 @ 2021-09-13T11:40:00.000Z
+    res body: {'time': '2021-09-13T11:40:00.000Z', 'hashrate': '93333333', 'localHashrate': '75163863', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73939394'}
+mileyzdy's share: 2764(+14) -> 2778
+
+mileyzdy + 10 @ 2021-09-13T11:50:00.000Z
+    res body: {'time': '2021-09-13T11:50:00.000Z', 'hashrate': '66666667', 'localHashrate': '74895189', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73286713'}
+mileyzdy's share: 2778(+10) -> 2788
+
+mileyzdy + 6 @ 2021-09-13T12:00:00.000Z
+    res body: {'time': '2021-09-13T12:00:00.000Z', 'hashrate': '40000000', 'localHashrate': '74723825', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73286713'}
+mileyzdy's share: 2788(+6) -> 2794
+
+mileyzdy + 6 @ 2021-09-13T12:10:00.000Z
+    res body: {'time': '2021-09-13T12:10:00.000Z', 'hashrate': '40000000', 'localHashrate': '78576163', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72913753'}
+mileyzdy's share: 2794(+6) -> 2800
+
+mileyzdy + 16 @ 2021-09-13T12:20:00.000Z
+    res body: {'time': '2021-09-13T12:20:00.000Z', 'hashrate': '106666667', 'localHashrate': '81829543', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73286713'}
+mileyzdy's share: 2800(+16) -> 2816
+
+mileyzdy + 4 @ 2021-09-13T12:30:00.000Z
+    res body: {'time': '2021-09-13T12:30:00.000Z', 'hashrate': '26666667', 'localHashrate': '78633133', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73240093'}
+mileyzdy's share: 2816(+4) -> 2820
+
+mileyzdy + 14 @ 2021-09-13T12:40:00.000Z
+    res body: {'time': '2021-09-13T12:40:00.000Z', 'hashrate': '93333333', 'localHashrate': '78817975', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72867133'}
+mileyzdy's share: 2820(+14) -> 2834
+
+mileyzdy + 8 @ 2021-09-13T12:50:00.000Z
+    res body: {'time': '2021-09-13T12:50:00.000Z', 'hashrate': '53333333', 'localHashrate': '79543343', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72587413'}
+mileyzdy's share: 2834(+8) -> 2842
+
+mileyzdy + 6 @ 2021-09-13T13:00:00.000Z
+    res body: {'time': '2021-09-13T13:00:00.000Z', 'hashrate': '40000000', 'localHashrate': '79716638', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72121212'}
+mileyzdy's share: 2842(+6) -> 2848
+
+mileyzdy + 18 @ 2021-09-13T13:10:00.000Z
+    res body: {'time': '2021-09-13T13:10:00.000Z', 'hashrate': '120000000', 'localHashrate': '80203333', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72587413'}
+mileyzdy's share: 2848(+18) -> 2866
+
+mileyzdy + 6 @ 2021-09-13T13:20:00.000Z
+    res body: {'time': '2021-09-13T13:20:00.000Z', 'hashrate': '40000000', 'localHashrate': '81647900', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72494173'}
+mileyzdy's share: 2866(+6) -> 2872
+
+mileyzdy + 6 @ 2021-09-13T13:30:00.000Z
+    res body: {'time': '2021-09-13T13:30:00.000Z', 'hashrate': '40000000', 'localHashrate': '82084143', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72307692'}
+mileyzdy's share: 2872(+6) -> 2878
+
+mileyzdy + 16 @ 2021-09-13T13:40:00.000Z
+    res body: {'time': '2021-09-13T13:40:00.000Z', 'hashrate': '106666667', 'localHashrate': '81555671', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72400932'}
+mileyzdy's share: 2878(+16) -> 2894
+
+mileyzdy + 16 @ 2021-09-13T13:50:00.000Z
+    res body: {'time': '2021-09-13T13:50:00.000Z', 'hashrate': '106666667', 'localHashrate': '82420117', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72960373'}
+mileyzdy's share: 2894(+16) -> 2910
+
+mileyzdy + 20 @ 2021-09-13T14:00:00.000Z
+    res body: {'time': '2021-09-13T14:00:00.000Z', 'hashrate': '133333333', 'localHashrate': '82183014', 'validShares': 20, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73426573'}
+mileyzdy's share: 2910(+20) -> 2930
+
+mileyzdy share change detected
+    15 shares @ 2021-09-13T03:50:00.000Z adjusted to 16(+1)
+    11 shares @ 2021-09-13T04:00:00.000Z adjusted to 10(-1)
+total adjustment: 0
+mileyzdy + 12 @ 2021-09-13T14:10:00.000Z
+    res body: {'time': '2021-09-13T14:10:00.000Z', 'hashrate': '80000000', 'localHashrate': '81890950', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73661972'}
+mileyzdy + 12 @ 2021-09-13T14:20:00.000Z
+    res body: {'time': '2021-09-13T14:20:00.000Z', 'hashrate': '80000000', 'localHashrate': '81246667', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73706294'}
+mileyzdy's share: 2930(+24) -> 2954
+
+mileyzdy share change detected
+    15 shares @ 2021-09-13T03:50:00.000Z adjusted to 16(+1)
+    11 shares @ 2021-09-13T04:00:00.000Z adjusted to 10(-1)
+total adjustment: 2954(+0) -> 2954
+mileyzdy + 6 @ 2021-09-13T14:30:00.000Z
+    res body: {'time': '2021-09-13T14:30:00.000Z', 'hashrate': '40000000', 'localHashrate': '80905943', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73519814'}
+mileyzdy's share: 2954(+6) -> 2960
+
+mileyzdy + 10 @ 2021-09-13T14:40:00.000Z
+    res body: {'time': '2021-09-13T14:40:00.000Z', 'hashrate': '66666667', 'localHashrate': '69204000', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73193473'}
+mileyzdy's share: 2960(+10) -> 2970
+
+mileyzdy + 4 @ 2021-09-13T14:50:00.000Z
+    res body: {'time': '2021-09-13T14:50:00.000Z', 'hashrate': '26666667', 'localHashrate': '62127325', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73145540'}
+mileyzdy's share: 2970(+4) -> 2974
+
+mileyzdy + 10 @ 2021-09-13T15:00:00.000Z
+    res body: {'time': '2021-09-13T15:00:00.000Z', 'hashrate': '66666667', 'localHashrate': '48839443', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73100233'}
+mileyzdy's share: 2974(+10) -> 2984
+
+nv3080ti + 0 @ 2021-09-12T15:30:00.000Z
+    res body: {'time': '2021-09-12T15:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T15:40:00.000Z
+    res body: {'time': '2021-09-12T15:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T15:50:00.000Z
+    res body: {'time': '2021-09-12T15:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T16:00:00.000Z
+    res body: {'time': '2021-09-12T16:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T16:10:00.000Z
+    res body: {'time': '2021-09-12T16:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T16:20:00.000Z
+    res body: {'time': '2021-09-12T16:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T16:30:00.000Z
+    res body: {'time': '2021-09-12T16:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T16:40:00.000Z
+    res body: {'time': '2021-09-12T16:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T16:50:00.000Z
+    res body: {'time': '2021-09-12T16:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T17:00:00.000Z
+    res body: {'time': '2021-09-12T17:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T17:10:00.000Z
+    res body: {'time': '2021-09-12T17:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T17:20:00.000Z
+    res body: {'time': '2021-09-12T17:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T17:30:00.000Z
+    res body: {'time': '2021-09-12T17:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T17:40:00.000Z
+    res body: {'time': '2021-09-12T17:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T17:50:00.000Z
+    res body: {'time': '2021-09-12T17:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T18:00:00.000Z
+    res body: {'time': '2021-09-12T18:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T18:10:00.000Z
+    res body: {'time': '2021-09-12T18:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T18:20:00.000Z
+    res body: {'time': '2021-09-12T18:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T18:30:00.000Z
+    res body: {'time': '2021-09-12T18:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T18:40:00.000Z
+    res body: {'time': '2021-09-12T18:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T18:50:00.000Z
+    res body: {'time': '2021-09-12T18:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T19:00:00.000Z
+    res body: {'time': '2021-09-12T19:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T19:10:00.000Z
+    res body: {'time': '2021-09-12T19:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T19:20:00.000Z
+    res body: {'time': '2021-09-12T19:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T19:30:00.000Z
+    res body: {'time': '2021-09-12T19:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T19:40:00.000Z
+    res body: {'time': '2021-09-12T19:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T19:50:00.000Z
+    res body: {'time': '2021-09-12T19:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T20:00:00.000Z
+    res body: {'time': '2021-09-12T20:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T20:10:00.000Z
+    res body: {'time': '2021-09-12T20:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T20:20:00.000Z
+    res body: {'time': '2021-09-12T20:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T20:30:00.000Z
+    res body: {'time': '2021-09-12T20:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T20:40:00.000Z
+    res body: {'time': '2021-09-12T20:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T20:50:00.000Z
+    res body: {'time': '2021-09-12T20:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T21:00:00.000Z
+    res body: {'time': '2021-09-12T21:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T21:10:00.000Z
+    res body: {'time': '2021-09-12T21:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T21:20:00.000Z
+    res body: {'time': '2021-09-12T21:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T21:30:00.000Z
+    res body: {'time': '2021-09-12T21:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T21:40:00.000Z
+    res body: {'time': '2021-09-12T21:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T21:50:00.000Z
+    res body: {'time': '2021-09-12T21:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T22:00:00.000Z
+    res body: {'time': '2021-09-12T22:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T22:10:00.000Z
+    res body: {'time': '2021-09-12T22:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T22:20:00.000Z
+    res body: {'time': '2021-09-12T22:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T22:30:00.000Z
+    res body: {'time': '2021-09-12T22:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T22:40:00.000Z
+    res body: {'time': '2021-09-12T22:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T22:50:00.000Z
+    res body: {'time': '2021-09-12T22:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T23:00:00.000Z
+    res body: {'time': '2021-09-12T23:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T23:10:00.000Z
+    res body: {'time': '2021-09-12T23:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T23:20:00.000Z
+    res body: {'time': '2021-09-12T23:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T23:30:00.000Z
+    res body: {'time': '2021-09-12T23:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T23:40:00.000Z
+    res body: {'time': '2021-09-12T23:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-12T23:50:00.000Z
+    res body: {'time': '2021-09-12T23:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T00:00:00.000Z
+    res body: {'time': '2021-09-13T00:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T00:10:00.000Z
+    res body: {'time': '2021-09-13T00:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T00:20:00.000Z
+    res body: {'time': '2021-09-13T00:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T00:30:00.000Z
+    res body: {'time': '2021-09-13T00:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T00:40:00.000Z
+    res body: {'time': '2021-09-13T00:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T00:50:00.000Z
+    res body: {'time': '2021-09-13T00:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T01:00:00.000Z
+    res body: {'time': '2021-09-13T01:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T01:10:00.000Z
+    res body: {'time': '2021-09-13T01:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T01:20:00.000Z
+    res body: {'time': '2021-09-13T01:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T01:30:00.000Z
+    res body: {'time': '2021-09-13T01:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T01:40:00.000Z
+    res body: {'time': '2021-09-13T01:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T01:50:00.000Z
+    res body: {'time': '2021-09-13T01:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T02:00:00.000Z
+    res body: {'time': '2021-09-13T02:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T02:10:00.000Z
+    res body: {'time': '2021-09-13T02:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T02:20:00.000Z
+    res body: {'time': '2021-09-13T02:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T02:30:00.000Z
+    res body: {'time': '2021-09-13T02:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T02:40:00.000Z
+    res body: {'time': '2021-09-13T02:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T02:50:00.000Z
+    res body: {'time': '2021-09-13T02:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T03:00:00.000Z
+    res body: {'time': '2021-09-13T03:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T03:10:00.000Z
+    res body: {'time': '2021-09-13T03:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T03:20:00.000Z
+    res body: {'time': '2021-09-13T03:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T03:30:00.000Z
+    res body: {'time': '2021-09-13T03:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T03:40:00.000Z
+    res body: {'time': '2021-09-13T03:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T03:50:00.000Z
+    res body: {'time': '2021-09-13T03:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T04:00:00.000Z
+    res body: {'time': '2021-09-13T04:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T04:10:00.000Z
+    res body: {'time': '2021-09-13T04:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T04:20:00.000Z
+    res body: {'time': '2021-09-13T04:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T04:30:00.000Z
+    res body: {'time': '2021-09-13T04:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T04:40:00.000Z
+    res body: {'time': '2021-09-13T04:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T04:50:00.000Z
+    res body: {'time': '2021-09-13T04:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T05:00:00.000Z
+    res body: {'time': '2021-09-13T05:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T05:10:00.000Z
+    res body: {'time': '2021-09-13T05:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T05:20:00.000Z
+    res body: {'time': '2021-09-13T05:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T05:30:00.000Z
+    res body: {'time': '2021-09-13T05:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T05:40:00.000Z
+    res body: {'time': '2021-09-13T05:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T05:50:00.000Z
+    res body: {'time': '2021-09-13T05:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T06:00:00.000Z
+    res body: {'time': '2021-09-13T06:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T06:10:00.000Z
+    res body: {'time': '2021-09-13T06:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T06:20:00.000Z
+    res body: {'time': '2021-09-13T06:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T06:30:00.000Z
+    res body: {'time': '2021-09-13T06:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T06:40:00.000Z
+    res body: {'time': '2021-09-13T06:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T06:50:00.000Z
+    res body: {'time': '2021-09-13T06:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T07:00:00.000Z
+    res body: {'time': '2021-09-13T07:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T07:10:00.000Z
+    res body: {'time': '2021-09-13T07:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T07:20:00.000Z
+    res body: {'time': '2021-09-13T07:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T07:30:00.000Z
+    res body: {'time': '2021-09-13T07:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T07:40:00.000Z
+    res body: {'time': '2021-09-13T07:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T07:50:00.000Z
+    res body: {'time': '2021-09-13T07:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T08:00:00.000Z
+    res body: {'time': '2021-09-13T08:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T08:10:00.000Z
+    res body: {'time': '2021-09-13T08:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T08:20:00.000Z
+    res body: {'time': '2021-09-13T08:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T08:30:00.000Z
+    res body: {'time': '2021-09-13T08:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T08:40:00.000Z
+    res body: {'time': '2021-09-13T08:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T08:50:00.000Z
+    res body: {'time': '2021-09-13T08:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T09:00:00.000Z
+    res body: {'time': '2021-09-13T09:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T09:10:00.000Z
+    res body: {'time': '2021-09-13T09:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T09:20:00.000Z
+    res body: {'time': '2021-09-13T09:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T09:30:00.000Z
+    res body: {'time': '2021-09-13T09:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T09:40:00.000Z
+    res body: {'time': '2021-09-13T09:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T09:50:00.000Z
+    res body: {'time': '2021-09-13T09:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T10:00:00.000Z
+    res body: {'time': '2021-09-13T10:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T10:10:00.000Z
+    res body: {'time': '2021-09-13T10:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T10:20:00.000Z
+    res body: {'time': '2021-09-13T10:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T10:30:00.000Z
+    res body: {'time': '2021-09-13T10:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T10:40:00.000Z
+    res body: {'time': '2021-09-13T10:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T10:50:00.000Z
+    res body: {'time': '2021-09-13T10:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T11:00:00.000Z
+    res body: {'time': '2021-09-13T11:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T11:10:00.000Z
+    res body: {'time': '2021-09-13T11:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T11:20:00.000Z
+    res body: {'time': '2021-09-13T11:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T11:30:00.000Z
+    res body: {'time': '2021-09-13T11:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T11:40:00.000Z
+    res body: {'time': '2021-09-13T11:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T11:50:00.000Z
+    res body: {'time': '2021-09-13T11:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T12:00:00.000Z
+    res body: {'time': '2021-09-13T12:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T12:10:00.000Z
+    res body: {'time': '2021-09-13T12:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T12:20:00.000Z
+    res body: {'time': '2021-09-13T12:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T12:30:00.000Z
+    res body: {'time': '2021-09-13T12:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T12:40:00.000Z
+    res body: {'time': '2021-09-13T12:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T12:50:00.000Z
+    res body: {'time': '2021-09-13T12:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T13:00:00.000Z
+    res body: {'time': '2021-09-13T13:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T13:10:00.000Z
+    res body: {'time': '2021-09-13T13:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T13:20:00.000Z
+    res body: {'time': '2021-09-13T13:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T13:30:00.000Z
+    res body: {'time': '2021-09-13T13:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T13:40:00.000Z
+    res body: {'time': '2021-09-13T13:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T13:50:00.000Z
+    res body: {'time': '2021-09-13T13:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T14:00:00.000Z
+    res body: {'time': '2021-09-13T14:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T14:10:00.000Z
+    res body: {'time': '2021-09-13T14:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T14:20:00.000Z
+    res body: {'time': '2021-09-13T14:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T14:30:00.000Z
+    res body: {'time': '2021-09-13T14:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T14:40:00.000Z
+    res body: {'time': '2021-09-13T14:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 0 @ 2021-09-13T14:50:00.000Z
+    res body: {'time': '2021-09-13T14:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '0'}
+nv3080ti + 2 @ 2021-09-13T15:10:00.000Z
+    res body: {'time': '2021-09-13T15:10:00.000Z', 'hashrate': '13333333', 'localHashrate': '224116200', 'validShares': 2, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '13333333'}
+nv3080ti's share: 244(+2) -> 246
+
+mileyzdy + 10 @ 2021-09-13T15:20:00.000Z
+    res body: {'time': '2021-09-13T15:20:00.000Z', 'hashrate': '66666667', 'localHashrate': '72903500', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '73380282'}
+mileyzdy's share: 2984(+10) -> 2994
+
+nv3080ti + 26 @ 2021-09-13T15:20:00.000Z
+    res body: {'time': '2021-09-13T15:20:00.000Z', 'hashrate': '173333333', 'localHashrate': '224607762', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '93333333'}
+nv3080ti's share: 246(+26) -> 272
+
+mileyzdy + 8 @ 2021-09-13T15:30:00.000Z
+    res body: {'time': '2021-09-13T15:30:00.000Z', 'hashrate': '53333333', 'localHashrate': '63291183', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72867133'}
+mileyzdy's share: 2994(+8) -> 3002
+
+nv3080ti + 26 @ 2021-09-13T15:30:00.000Z
+    res body: {'time': '2021-09-13T15:30:00.000Z', 'hashrate': '173333333', 'localHashrate': '224002043', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '120000000'}
+nv3080ti's share: 272(+26) -> 298
+
+mileyzdy + 2 @ 2021-09-13T15:40:00.000Z
+    res body: {'time': '2021-09-13T15:40:00.000Z', 'hashrate': '13333333', 'localHashrate': '73890575', 'validShares': 2, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72587413'}
+mileyzdy's share: 3002(+2) -> 3004
+
+nv3080ti + 38 @ 2021-09-13T15:40:00.000Z
+    res body: {'time': '2021-09-13T15:40:00.000Z', 'hashrate': '253333333', 'localHashrate': '224445150', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '153333333'}
+nv3080ti's share: 298(+38) -> 336
+
+mileyzdy + 14 @ 2021-09-13T15:50:00.000Z
+    res body: {'time': '2021-09-13T15:50:00.000Z', 'hashrate': '93333333', 'localHashrate': '81095144', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72121212'}
+mileyzdy's share: 3004(+14) -> 3018
+
+nv3080ti + 26 @ 2021-09-13T15:50:00.000Z
+    res body: {'time': '2021-09-13T15:50:00.000Z', 'hashrate': '173333333', 'localHashrate': '223555786', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '157333333'}
+nv3080ti's share: 336(+26) -> 362
+
+mileyzdy + 20 @ 2021-09-13T16:00:00.000Z
+    res body: {'time': '2021-09-13T16:00:00.000Z', 'hashrate': '133333333', 'localHashrate': '80367330', 'validShares': 20, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72494173'}
+mileyzdy's share: 3018(+20) -> 3038
+
+nv3080ti + 50 @ 2021-09-13T16:00:00.000Z
+    res body: {'time': '2021-09-13T16:00:00.000Z', 'hashrate': '333333333', 'localHashrate': '224031488', 'validShares': 50, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '186666666'}
+nv3080ti's share: 362(+50) -> 412
+
+mileyzdy + 8 @ 2021-09-13T16:10:00.000Z
+    res body: {'time': '2021-09-13T16:10:00.000Z', 'hashrate': '53333333', 'localHashrate': '80701078', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '72121212'}
+mileyzdy's share: 3038(+8) -> 3046
+
+nv3080ti + 34 @ 2021-09-13T16:10:00.000Z
+    res body: {'time': '2021-09-13T16:10:00.000Z', 'hashrate': '226666667', 'localHashrate': '224842343', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '192380952'}
+nv3080ti's share: 412(+34) -> 446
+
+nv3080ti + 40 @ 2021-09-13T16:20:00.000Z
+    res body: {'time': '2021-09-13T16:20:00.000Z', 'hashrate': '266666667', 'localHashrate': '224477087', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '201666667'}
+nv3080ti's share: 446(+40) -> 486
+
+nv3080ti + 28 @ 2021-09-13T16:30:00.000Z
+    res body: {'time': '2021-09-13T16:30:00.000Z', 'hashrate': '186666667', 'localHashrate': '225141186', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '200000000'}
+nv3080ti's share: 486(+28) -> 514
+
+mileyzdy + 0 @ 2021-09-13T16:20:00.000Z
+    res body: {'time': '2021-09-13T16:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '71596244'}
+nv3080ti + 36 @ 2021-09-13T16:40:00.000Z
+    res body: {'time': '2021-09-13T16:40:00.000Z', 'hashrate': '246666667', 'localHashrate': '224931688', 'validShares': 36, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '204666667'}
+nv3080ti's share: 514(+36) -> 550
+
+mileyzdy + 0 @ 2021-09-13T16:30:00.000Z
+    res body: {'time': '2021-09-13T16:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '70845070'}
+nv3080ti + 32 @ 2021-09-13T16:50:00.000Z
+    res body: {'time': '2021-09-13T16:50:00.000Z', 'hashrate': '213333333', 'localHashrate': '224779514', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '205454545'}
+nv3080ti's share: 550(+32) -> 582
+
+mileyzdy + 0 @ 2021-09-13T16:40:00.000Z
+    res body: {'time': '2021-09-13T16:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '70000000'}
+nv3080ti + 32 @ 2021-09-13T17:00:00.000Z
+    res body: {'time': '2021-09-13T17:00:00.000Z', 'hashrate': '226666667', 'localHashrate': '224327263', 'validShares': 32, 'staleShares': 4, 'invalidShares': 0, 'meanHashrate': '207222222'}
+nv3080ti's share: 582(+32) -> 614
+
+mileyzdy + 0 @ 2021-09-13T16:50:00.000Z
+    res body: {'time': '2021-09-13T16:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '69671362'}
+nv3080ti + 28 @ 2021-09-13T17:10:00.000Z
+    res body: {'time': '2021-09-13T17:10:00.000Z', 'hashrate': '186666667', 'localHashrate': '223894386', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '205641026'}
+nv3080ti's share: 614(+28) -> 642
+
+mileyzdy + 0 @ 2021-09-13T17:00:00.000Z
+    res body: {'time': '2021-09-13T17:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '69107981'}
+nv3080ti + 44 @ 2021-09-13T17:20:00.000Z
+    res body: {'time': '2021-09-13T17:20:00.000Z', 'hashrate': '293333333', 'localHashrate': '225552600', 'validShares': 44, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '211904762'}
+nv3080ti's share: 642(+44) -> 686
+
+mileyzdy + 0 @ 2021-09-13T17:10:00.000Z
+    res body: {'time': '2021-09-13T17:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '68732394'}
+nv3080ti + 30 @ 2021-09-13T17:30:00.000Z
+    res body: {'time': '2021-09-13T17:30:00.000Z', 'hashrate': '200000000', 'localHashrate': '223975529', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '211111111'}
+nv3080ti's share: 686(+30) -> 716
+
+mileyzdy + 0 @ 2021-09-13T17:20:00.000Z
+    res body: {'time': '2021-09-13T17:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '67793427'}
+nv3080ti + 34 @ 2021-09-13T17:40:00.000Z
+    res body: {'time': '2021-09-13T17:40:00.000Z', 'hashrate': '226666667', 'localHashrate': '224519500', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '212083333'}
+nv3080ti's share: 716(+34) -> 750
+
+mileyzdy + 0 @ 2021-09-13T17:30:00.000Z
+    res body: {'time': '2021-09-13T17:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '67136150'}
+nv3080ti + 28 @ 2021-09-13T17:50:00.000Z
+    res body: {'time': '2021-09-13T17:50:00.000Z', 'hashrate': '186666667', 'localHashrate': '224089614', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '210588235'}
+nv3080ti's share: 750(+28) -> 778
+
+mileyzdy + 0 @ 2021-09-13T17:40:00.000Z
+    res body: {'time': '2021-09-13T17:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '66197183'}
+nv3080ti + 34 @ 2021-09-13T18:00:00.000Z
+    res body: {'time': '2021-09-13T18:00:00.000Z', 'hashrate': '226666667', 'localHashrate': '223515875', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '211481482'}
+nv3080ti's share: 778(+34) -> 812
+
+mileyzdy + 0 @ 2021-09-13T17:50:00.000Z
+    res body: {'time': '2021-09-13T17:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '65446009'}
+nv3080ti + 44 @ 2021-09-13T18:10:00.000Z
+    res body: {'time': '2021-09-13T18:10:00.000Z', 'hashrate': '293333333', 'localHashrate': '223751300', 'validShares': 44, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '215789474'}
+nv3080ti's share: 812(+44) -> 856
+
+mileyzdy + 0 @ 2021-09-13T18:00:00.000Z
+    res body: {'time': '2021-09-13T18:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '65164319'}
+nv3080ti + 20 @ 2021-09-13T18:20:00.000Z
+    res body: {'time': '2021-09-13T18:20:00.000Z', 'hashrate': '133333333', 'localHashrate': '224340650', 'validShares': 20, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '211666667'}
+nv3080ti's share: 856(+20) -> 876
+
+mileyzdy + 0 @ 2021-09-13T18:10:00.000Z
+    res body: {'time': '2021-09-13T18:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '64600939'}
+nv3080ti + 20 @ 2021-09-13T18:30:00.000Z
+    res body: {'time': '2021-09-13T18:30:00.000Z', 'hashrate': '133333333', 'localHashrate': '223847543', 'validShares': 20, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '207936508'}
+nv3080ti's share: 876(+20) -> 896
+
+nv3080ti + 40 @ 2021-09-13T18:40:00.000Z
+    res body: {'time': '2021-09-13T18:40:00.000Z', 'hashrate': '266666667', 'localHashrate': '224023025', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '210606061'}
+nv3080ti + 40 @ 2021-09-13T18:50:00.000Z
+    res body: {'time': '2021-09-13T18:50:00.000Z', 'hashrate': '266666667', 'localHashrate': '224068714', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '213043478'}
+nv3080ti + 24 @ 2021-09-13T19:00:00.000Z
+    res body: {'time': '2021-09-13T19:00:00.000Z', 'hashrate': '160000000', 'localHashrate': '224730250', 'validShares': 24, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '210833333'}
+nv3080ti's share: 896(+104) -> 1000
+
+mileyzdy + 0 @ 2021-09-13T18:20:00.000Z
+    res body: {'time': '2021-09-13T18:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '64364508'}
+mileyzdy + 0 @ 2021-09-13T18:30:00.000Z
+    res body: {'time': '2021-09-13T18:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '63904762'}
+mileyzdy + 0 @ 2021-09-13T18:40:00.000Z
+    res body: {'time': '2021-09-13T18:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '63451537'}
+mileyzdy + 0 @ 2021-09-13T18:50:00.000Z
+    res body: {'time': '2021-09-13T18:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '63004695'}
+nv3080ti + 48 @ 2021-09-13T19:10:00.000Z
+    res body: {'time': '2021-09-13T19:10:00.000Z', 'hashrate': '320000000', 'localHashrate': '223472214', 'validShares': 48, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '215200000'}
+nv3080ti's share: 1000(+48) -> 1048
+
+mileyzdy + 0 @ 2021-09-13T19:00:00.000Z
+    res body: {'time': '2021-09-13T19:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '62441315'}
+nv3080ti + 46 @ 2021-09-13T19:20:00.000Z
+    res body: {'time': '2021-09-13T19:20:00.000Z', 'hashrate': '306666667', 'localHashrate': '224541475', 'validShares': 46, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218717949'}
+nv3080ti's share: 1048(+46) -> 1094
+
+mileyzdy + 0 @ 2021-09-13T19:10:00.000Z
+    res body: {'time': '2021-09-13T19:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '62347418'}
+nv3080ti + 36 @ 2021-09-13T19:30:00.000Z
+    res body: {'time': '2021-09-13T19:30:00.000Z', 'hashrate': '240000000', 'localHashrate': '224982329', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219506173'}
+nv3080ti's share: 1094(+36) -> 1130
+
+mileyzdy + 0 @ 2021-09-13T19:20:00.000Z
+    res body: {'time': '2021-09-13T19:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '62065728'}
+nv3080ti + 28 @ 2021-09-13T19:40:00.000Z
+    res body: {'time': '2021-09-13T19:40:00.000Z', 'hashrate': '186666667', 'localHashrate': '224233175', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218333333'}
+nv3080ti's share: 1130(+28) -> 1158
+
+mileyzdy + 0 @ 2021-09-13T19:30:00.000Z
+    res body: {'time': '2021-09-13T19:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '61502347'}
+nv3080ti + 32 @ 2021-09-13T19:50:00.000Z
+    res body: {'time': '2021-09-13T19:50:00.000Z', 'hashrate': '213333333', 'localHashrate': '224234771', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218160920'}
+nv3080ti's share: 1158(+32) -> 1190
+
+mileyzdy + 0 @ 2021-09-13T19:40:00.000Z
+    res body: {'time': '2021-09-13T19:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '61032864'}
+nv3080ti + 28 @ 2021-09-13T20:00:00.000Z
+    res body: {'time': '2021-09-13T20:00:00.000Z', 'hashrate': '186666667', 'localHashrate': '224636600', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '217111111'}
+nv3080ti's share: 1190(+28) -> 1218
+
+mileyzdy + 0 @ 2021-09-13T19:50:00.000Z
+    res body: {'time': '2021-09-13T19:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '60751174'}
+nv3080ti + 28 @ 2021-09-13T20:10:00.000Z
+    res body: {'time': '2021-09-13T20:10:00.000Z', 'hashrate': '186666667', 'localHashrate': '223954300', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '216129032'}
+nv3080ti's share: 1218(+28) -> 1246
+
+mileyzdy + 0 @ 2021-09-13T20:00:00.000Z
+    res body: {'time': '2021-09-13T20:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '60187793'}
+nv3080ti + 52 @ 2021-09-13T20:20:00.000Z
+    res body: {'time': '2021-09-13T20:20:00.000Z', 'hashrate': '346666667', 'localHashrate': '223435950', 'validShares': 52, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220208333'}
+nv3080ti's share: 1246(+52) -> 1298
+
+mileyzdy + 0 @ 2021-09-13T20:10:00.000Z
+    res body: {'time': '2021-09-13T20:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '59154930'}
+nv3080ti + 26 @ 2021-09-13T20:30:00.000Z
+    res body: {'time': '2021-09-13T20:30:00.000Z', 'hashrate': '173333333', 'localHashrate': '224369257', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218787879'}
+nv3080ti's share: 1298(+26) -> 1324
+
+mileyzdy + 0 @ 2021-09-13T20:20:00.000Z
+    res body: {'time': '2021-09-13T20:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '58497653'}
+nv3080ti + 56 @ 2021-09-13T20:40:00.000Z
+    res body: {'time': '2021-09-13T20:40:00.000Z', 'hashrate': '373333333', 'localHashrate': '224231887', 'validShares': 56, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '223333333'}
+nv3080ti's share: 1324(+56) -> 1380
+
+mileyzdy + 0 @ 2021-09-13T20:30:00.000Z
+    res body: {'time': '2021-09-13T20:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '58169014'}
+nv3080ti + 12 @ 2021-09-13T20:50:00.000Z
+    res body: {'time': '2021-09-13T20:50:00.000Z', 'hashrate': '80000000', 'localHashrate': '224147514', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219238095'}
+nv3080ti's share: 1380(+12) -> 1392
+
+mileyzdy + 0 @ 2021-09-13T20:40:00.000Z
+    res body: {'time': '2021-09-13T20:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '57605634'}
+nv3080ti + 24 @ 2021-09-13T21:00:00.000Z
+    res body: {'time': '2021-09-13T21:00:00.000Z', 'hashrate': '173333333', 'localHashrate': '223893478', 'validShares': 24, 'staleShares': 4, 'invalidShares': 0, 'meanHashrate': '217962963'}
+nv3080ti's share: 1392(+24) -> 1416
+
+mileyzdy + 0 @ 2021-09-13T20:50:00.000Z
+    res body: {'time': '2021-09-13T20:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '57042254'}
+nv3080ti + 30 @ 2021-09-13T21:10:00.000Z
+    res body: {'time': '2021-09-13T21:10:00.000Z', 'hashrate': '206666667', 'localHashrate': '224196737', 'validShares': 30, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '217657658'}
+nv3080ti's share: 1416(+30) -> 1446
+
+mileyzdy + 0 @ 2021-09-13T21:00:00.000Z
+    res body: {'time': '2021-09-13T21:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '56291080'}
+nv3080ti + 28 @ 2021-09-13T21:20:00.000Z
+    res body: {'time': '2021-09-13T21:20:00.000Z', 'hashrate': '186666667', 'localHashrate': '224523200', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '216842105'}
+nv3080ti's share: 1446(+28) -> 1474
+
+mileyzdy + 0 @ 2021-09-13T21:10:00.000Z
+    res body: {'time': '2021-09-13T21:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '55821596'}
+nv3080ti + 32 @ 2021-09-13T21:30:00.000Z
+    res body: {'time': '2021-09-13T21:30:00.000Z', 'hashrate': '213333333', 'localHashrate': '224712213', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '216752137'}
+nv3080ti's share: 1474(+32) -> 1506
+
+mileyzdy + 0 @ 2021-09-13T21:20:00.000Z
+    res body: {'time': '2021-09-13T21:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '55164319'}
+nv3080ti + 34 @ 2021-09-13T21:40:00.000Z
+    res body: {'time': '2021-09-13T21:40:00.000Z', 'hashrate': '226666667', 'localHashrate': '225081689', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '217000000'}
+nv3080ti's share: 1506(+34) -> 1540
+
+mileyzdy + 0 @ 2021-09-13T21:30:00.000Z
+    res body: {'time': '2021-09-13T21:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '55070423'}
+nv3080ti + 44 @ 2021-09-13T21:50:00.000Z
+    res body: {'time': '2021-09-13T21:50:00.000Z', 'hashrate': '293333333', 'localHashrate': '224356011', 'validShares': 44, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218861789'}
+nv3080ti's share: 1540(+44) -> 1584
+
+mileyzdy + 0 @ 2021-09-13T21:40:00.000Z
+    res body: {'time': '2021-09-13T21:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '54084507'}
+nv3080ti + 36 @ 2021-09-13T22:00:00.000Z
+    res body: {'time': '2021-09-13T22:00:00.000Z', 'hashrate': '240000000', 'localHashrate': '224440475', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219365079'}
+nv3080ti's share: 1584(+36) -> 1620
+
+mileyzdy + 0 @ 2021-09-13T21:50:00.000Z
+    res body: {'time': '2021-09-13T21:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '53145540'}
+nv3080ti + 36 @ 2021-09-13T22:10:00.000Z
+    res body: {'time': '2021-09-13T22:10:00.000Z', 'hashrate': '240000000', 'localHashrate': '224168800', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219844961'}
+nv3080ti's share: 1620(+36) -> 1656
+
+mileyzdy + 0 @ 2021-09-13T22:00:00.000Z
+    res body: {'time': '2021-09-13T22:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '52206573'}
+nv3080ti + 26 @ 2021-09-13T22:20:00.000Z
+    res body: {'time': '2021-09-13T22:20:00.000Z', 'hashrate': '180000000', 'localHashrate': '224504400', 'validShares': 26, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '218939394'}
+nv3080ti's share: 1656(+26) -> 1682
+
+mileyzdy + 0 @ 2021-09-13T22:10:00.000Z
+    res body: {'time': '2021-09-13T22:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '52018779'}
+nv3080ti + 44 @ 2021-09-13T22:30:00.000Z
+    res body: {'time': '2021-09-13T22:30:00.000Z', 'hashrate': '293333333', 'localHashrate': '224312578', 'validShares': 44, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220592593'}
+nv3080ti's share: 1682(+44) -> 1726
+
+mileyzdy + 0 @ 2021-09-13T22:20:00.000Z
+    res body: {'time': '2021-09-13T22:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '51737089'}
+nv3080ti + 24 @ 2021-09-13T22:40:00.000Z
+    res body: {'time': '2021-09-13T22:40:00.000Z', 'hashrate': '160000000', 'localHashrate': '224431250', 'validShares': 24, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219275362'}
+nv3080ti's share: 1726(+24) -> 1750
+
+mileyzdy + 0 @ 2021-09-13T22:30:00.000Z
+    res body: {'time': '2021-09-13T22:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '50985916'}
+nv3080ti + 26 @ 2021-09-13T22:50:00.000Z
+    res body: {'time': '2021-09-13T22:50:00.000Z', 'hashrate': '173333333', 'localHashrate': '223575544', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218297872'}
+nv3080ti's share: 1750(+26) -> 1776
+
+mileyzdy + 0 @ 2021-09-13T22:40:00.000Z
+    res body: {'time': '2021-09-13T22:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '50234742'}
+nv3080ti + 36 @ 2021-09-13T23:00:00.000Z
+    res body: {'time': '2021-09-13T23:00:00.000Z', 'hashrate': '240000000', 'localHashrate': '224532978', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218750000'}
+nv3080ti's share: 1776(+36) -> 1812
+
+mileyzdy + 0 @ 2021-09-13T22:50:00.000Z
+    res body: {'time': '2021-09-13T22:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '49765258'}
+nv3080ti + 32 @ 2021-09-13T23:10:00.000Z
+    res body: {'time': '2021-09-13T23:10:00.000Z', 'hashrate': '213333333', 'localHashrate': '223987775', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218639456'}
+nv3080ti's share: 1812(+32) -> 1844
+
+mileyzdy + 0 @ 2021-09-13T23:00:00.000Z
+    res body: {'time': '2021-09-13T23:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '49107981'}
+nv3080ti + 42 @ 2021-09-13T23:20:00.000Z
+    res body: {'time': '2021-09-13T23:20:00.000Z', 'hashrate': '280000000', 'localHashrate': '224255333', 'validShares': 42, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219866667'}
+nv3080ti's share: 1844(+42) -> 1886
+
+mileyzdy + 0 @ 2021-09-13T23:10:00.000Z
+    res body: {'time': '2021-09-13T23:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '48920188'}
+nv3080ti + 36 @ 2021-09-13T23:30:00.000Z
+    res body: {'time': '2021-09-13T23:30:00.000Z', 'hashrate': '240000000', 'localHashrate': '224516625', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220261438'}
+nv3080ti's share: 1886(+36) -> 1922
+
+mileyzdy + 0 @ 2021-09-13T23:20:00.000Z
+    res body: {'time': '2021-09-13T23:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '48638498'}
+nv3080ti + 34 @ 2021-09-13T23:40:00.000Z
+    res body: {'time': '2021-09-13T23:40:00.000Z', 'hashrate': '226666667', 'localHashrate': '224486811', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220384615'}
+nv3080ti's share: 1922(+34) -> 1956
+
+mileyzdy + 0 @ 2021-09-13T23:30:00.000Z
+    res body: {'time': '2021-09-13T23:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '48169014'}
+nv3080ti + 32 @ 2021-09-13T23:50:00.000Z
+    res body: {'time': '2021-09-13T23:50:00.000Z', 'hashrate': '213333333', 'localHashrate': '224636463', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220251572'}
+nv3080ti's share: 1956(+32) -> 1988
+
+mileyzdy + 0 @ 2021-09-13T23:40:00.000Z
+    res body: {'time': '2021-09-13T23:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '47417840'}
+nv3080ti + 16 @ 2021-09-14T00:00:00.000Z
+    res body: {'time': '2021-09-14T00:00:00.000Z', 'hashrate': '106666667', 'localHashrate': '224291775', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218148148'}
+nv3080ti's share: 1988(+16) -> 2004
+
+mileyzdy + 0 @ 2021-09-13T23:50:00.000Z
+    res body: {'time': '2021-09-13T23:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '46760563'}
+nv3080ti + 34 @ 2021-09-14T00:10:00.000Z
+    res body: {'time': '2021-09-14T00:10:00.000Z', 'hashrate': '226666667', 'localHashrate': '224627586', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218303030'}
+nv3080ti's share: 2004(+34) -> 2038
+
+mileyzdy + 0 @ 2021-09-14T00:00:00.000Z
+    res body: {'time': '2021-09-14T00:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '45821596'}
+nv3080ti + 30 @ 2021-09-14T00:20:00.000Z
+    res body: {'time': '2021-09-14T00:20:00.000Z', 'hashrate': '200000000', 'localHashrate': '223754750', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '217976190'}
+nv3080ti's share: 2038(+30) -> 2068
+
+mileyzdy + 0 @ 2021-09-14T00:10:00.000Z
+    res body: {'time': '2021-09-14T00:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '45164319'}
+nv3080ti + 38 @ 2021-09-14T00:30:00.000Z
+    res body: {'time': '2021-09-14T00:30:00.000Z', 'hashrate': '253333333', 'localHashrate': '224591000', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218596491'}
+nv3080ti's share: 2068(+38) -> 2106
+
+mileyzdy + 0 @ 2021-09-14T00:20:00.000Z
+    res body: {'time': '2021-09-14T00:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '44600939'}
+nv3080ti + 44 @ 2021-09-14T00:40:00.000Z
+    res body: {'time': '2021-09-14T00:40:00.000Z', 'hashrate': '300000000', 'localHashrate': '224300288', 'validShares': 44, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '220000000'}
+nv3080ti's share: 2106(+44) -> 2150
+
+mileyzdy + 0 @ 2021-09-14T00:30:00.000Z
+    res body: {'time': '2021-09-14T00:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '44131455'}
+nv3080ti + 36 @ 2021-09-14T00:50:00.000Z
+    res body: {'time': '2021-09-14T00:50:00.000Z', 'hashrate': '240000000', 'localHashrate': '224538914', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220338983'}
+nv3080ti's share: 2150(+36) -> 2186
+
+mileyzdy + 0 @ 2021-09-14T00:40:00.000Z
+    res body: {'time': '2021-09-14T00:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '43380282'}
+nv3080ti + 36 @ 2021-09-14T01:00:00.000Z
+    res body: {'time': '2021-09-14T01:00:00.000Z', 'hashrate': '240000000', 'localHashrate': '224084713', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220666667'}
+nv3080ti's share: 2186(+36) -> 2222
+
+mileyzdy + 0 @ 2021-09-14T00:50:00.000Z
+    res body: {'time': '2021-09-14T00:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '42723005'}
+nv3080ti + 34 @ 2021-09-14T01:10:00.000Z
+    res body: {'time': '2021-09-14T01:10:00.000Z', 'hashrate': '226666667', 'localHashrate': '223995786', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220765027'}
+nv3080ti's share: 2222(+34) -> 2256
+
+mileyzdy + 0 @ 2021-09-14T01:00:00.000Z
+    res body: {'time': '2021-09-14T01:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '41971831'}
+nv3080ti + 32 @ 2021-09-14T01:20:00.000Z
+    res body: {'time': '2021-09-14T01:20:00.000Z', 'hashrate': '213333333', 'localHashrate': '224203563', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220645161'}
+nv3080ti's share: 2256(+32) -> 2288
+
+mileyzdy + 0 @ 2021-09-14T01:10:00.000Z
+    res body: {'time': '2021-09-14T01:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '41502347'}
+nv3080ti + 32 @ 2021-09-14T01:30:00.000Z
+    res body: {'time': '2021-09-14T01:30:00.000Z', 'hashrate': '213333333', 'localHashrate': '224028443', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220529101'}
+nv3080ti's share: 2288(+32) -> 2320
+
+mileyzdy + 0 @ 2021-09-14T01:20:00.000Z
+    res body: {'time': '2021-09-14T01:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '41220657'}
+nv3080ti + 38 @ 2021-09-14T01:40:00.000Z
+    res body: {'time': '2021-09-14T01:40:00.000Z', 'hashrate': '253333333', 'localHashrate': '224166563', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221041667'}
+nv3080ti's share: 2320(+38) -> 2358
+
+mileyzdy + 0 @ 2021-09-14T01:30:00.000Z
+    res body: {'time': '2021-09-14T01:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '40563380'}
+nv3080ti + 38 @ 2021-09-14T01:50:00.000Z
+    res body: {'time': '2021-09-14T01:50:00.000Z', 'hashrate': '253333333', 'localHashrate': '224785600', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221538462'}
+nv3080ti's share: 2358(+38) -> 2396
+
+mileyzdy + 0 @ 2021-09-14T01:40:00.000Z
+    res body: {'time': '2021-09-14T01:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '40093897'}
+nv3080ti + 42 @ 2021-09-14T02:00:00.000Z
+    res body: {'time': '2021-09-14T02:00:00.000Z', 'hashrate': '280000000', 'localHashrate': '224510613', 'validShares': 42, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222424242'}
+nv3080ti's share: 2396(+42) -> 2438
+
+mileyzdy + 0 @ 2021-09-14T01:50:00.000Z
+    res body: {'time': '2021-09-14T01:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '39812207'}
+nv3080ti + 36 @ 2021-09-14T02:10:00.000Z
+    res body: {'time': '2021-09-14T02:10:00.000Z', 'hashrate': '246666667', 'localHashrate': '224480871', 'validShares': 36, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '222786070'}
+nv3080ti's share: 2438(+36) -> 2474
+
+mileyzdy + 0 @ 2021-09-14T02:00:00.000Z
+    res body: {'time': '2021-09-14T02:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '39530516'}
+nv3080ti + 18 @ 2021-09-14T02:20:00.000Z
+    res body: {'time': '2021-09-14T02:20:00.000Z', 'hashrate': '120000000', 'localHashrate': '224334375', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221274510'}
+nv3080ti's share: 2474(+18) -> 2492
+
+mileyzdy + 0 @ 2021-09-14T02:10:00.000Z
+    res body: {'time': '2021-09-14T02:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '38967136'}
+nv3080ti + 32 @ 2021-09-14T02:30:00.000Z
+    res body: {'time': '2021-09-14T02:30:00.000Z', 'hashrate': '213333333', 'localHashrate': '224553114', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221159420'}
+nv3080ti's share: 2492(+32) -> 2524
+
+mileyzdy + 0 @ 2021-09-14T02:20:00.000Z
+    res body: {'time': '2021-09-14T02:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '38309859'}
+nv3080ti + 36 @ 2021-09-14T02:40:00.000Z
+    res body: {'time': '2021-09-14T02:40:00.000Z', 'hashrate': '240000000', 'localHashrate': '224091325', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221428571'}
+nv3080ti's share: 2524(+36) -> 2560
+
+mileyzdy + 0 @ 2021-09-14T02:30:00.000Z
+    res body: {'time': '2021-09-14T02:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '37652582'}
+nv3080ti + 44 @ 2021-09-14T02:50:00.000Z
+    res body: {'time': '2021-09-14T02:50:00.000Z', 'hashrate': '293333333', 'localHashrate': '223482686', 'validShares': 44, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222441315'}
+nv3080ti's share: 2560(+44) -> 2604
+
+mileyzdy + 0 @ 2021-09-14T02:40:00.000Z
+    res body: {'time': '2021-09-14T02:40:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '36995305'}
+nv3080ti + 42 @ 2021-09-14T03:00:00.000Z
+    res body: {'time': '2021-09-14T03:00:00.000Z', 'hashrate': '280000000', 'localHashrate': '224118300', 'validShares': 42, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '223240741'}
+nv3080ti's share: 2604(+42) -> 2646
+
+mileyzdy + 0 @ 2021-09-14T02:50:00.000Z
+    res body: {'time': '2021-09-14T02:50:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '36338028'}
+nv3080ti + 30 @ 2021-09-14T03:10:00.000Z
+    res body: {'time': '2021-09-14T03:10:00.000Z', 'hashrate': '200000000', 'localHashrate': '224889143', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222922374'}
+nv3080ti's share: 2646(+30) -> 2676
+
+mileyzdy + 0 @ 2021-09-14T03:00:00.000Z
+    res body: {'time': '2021-09-14T03:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '35774648'}
+nv3080ti + 26 @ 2021-09-14T03:20:00.000Z
+    res body: {'time': '2021-09-14T03:20:00.000Z', 'hashrate': '173333333', 'localHashrate': '224568563', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222252252'}
+nv3080ti's share: 2676(+26) -> 2702
+
+mileyzdy + 0 @ 2021-09-14T03:10:00.000Z
+    res body: {'time': '2021-09-14T03:10:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '35117371'}
+nv3080ti + 28 @ 2021-09-14T03:30:00.000Z
+    res body: {'time': '2021-09-14T03:30:00.000Z', 'hashrate': '186666667', 'localHashrate': '224155843', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221777778'}
+nv3080ti's share: 2702(+28) -> 2730
+
+mileyzdy + 0 @ 2021-09-14T03:20:00.000Z
+    res body: {'time': '2021-09-14T03:20:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '34929577'}
+nv3080ti + 28 @ 2021-09-14T03:40:00.000Z
+    res body: {'time': '2021-09-14T03:40:00.000Z', 'hashrate': '186666667', 'localHashrate': '224191813', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221315789'}
+nv3080ti's share: 2730(+28) -> 2758
+
+mileyzdy + 0 @ 2021-09-14T03:30:00.000Z
+    res body: {'time': '2021-09-14T03:30:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '34178404'}
+nv3080ti + 24 @ 2021-09-14T03:50:00.000Z
+    res body: {'time': '2021-09-14T03:50:00.000Z', 'hashrate': '160000000', 'localHashrate': '224083114', 'validShares': 24, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220519481'}
+nv3080ti's share: 2758(+24) -> 2782
+
+mileyzdy + 2 @ 2021-09-14T03:50:00.000Z
+    res body: {'time': '2021-09-14T03:50:00.000Z', 'hashrate': '13333333', 'localHashrate': '69648600', 'validShares': 2, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33802817'}
+mileyzdy's share: 3046(+2) -> 3048
+
+nv3080ti + 38 @ 2021-09-14T04:00:00.000Z
+    res body: {'time': '2021-09-14T04:00:00.000Z', 'hashrate': '253333333', 'localHashrate': '223979663', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220940171'}
+nv3080ti's share: 2782(+38) -> 2820
+
+mileyzdy + 12 @ 2021-09-14T04:00:00.000Z
+    res body: {'time': '2021-09-14T04:00:00.000Z', 'hashrate': '80000000', 'localHashrate': '69801929', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33846154'}
+mileyzdy's share: 3048(+12) -> 3060
+
+nv3080ti + 34 @ 2021-09-14T04:10:00.000Z
+    res body: {'time': '2021-09-14T04:10:00.000Z', 'hashrate': '233333333', 'localHashrate': '224827514', 'validShares': 34, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '221097046'}
+nv3080ti's share: 2820(+34) -> 2854
+
+mileyzdy + 6 @ 2021-09-14T04:10:00.000Z
+    res body: {'time': '2021-09-14T04:10:00.000Z', 'hashrate': '40000000', 'localHashrate': '71411175', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33846154'}
+mileyzdy's share: 3060(+6) -> 3066
+
+nv3080ti + 24 @ 2021-09-14T04:20:00.000Z
+    res body: {'time': '2021-09-14T04:20:00.000Z', 'hashrate': '160000000', 'localHashrate': '223585975', 'validShares': 24, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220333333'}
+nv3080ti's share: 2854(+24) -> 2878
+
+mileyzdy + 6 @ 2021-09-14T04:20:00.000Z
+    res body: {'time': '2021-09-14T04:20:00.000Z', 'hashrate': '40000000', 'localHashrate': '70033860', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33473193'}
+mileyzdy's share: 3066(+6) -> 3072
+
+nv3080ti + 26 @ 2021-09-14T04:30:00.000Z
+    res body: {'time': '2021-09-14T04:30:00.000Z', 'hashrate': '173333333', 'localHashrate': '224324371', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219753086'}
+nv3080ti + 54 @ 2021-09-14T04:40:00.000Z
+    res body: {'time': '2021-09-14T04:40:00.000Z', 'hashrate': '360000000', 'localHashrate': '223797163', 'validShares': 54, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221463415'}
+nv3080ti + 30 @ 2021-09-14T04:50:00.000Z
+    res body: {'time': '2021-09-14T04:50:00.000Z', 'hashrate': '200000000', 'localHashrate': '224121629', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221204819'}
+nv3080ti + 42 @ 2021-09-14T05:00:00.000Z
+    res body: {'time': '2021-09-14T05:00:00.000Z', 'hashrate': '280000000', 'localHashrate': '223282025', 'validShares': 42, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221904762'}
+nv3080ti + 30 @ 2021-09-14T05:10:00.000Z
+    res body: {'time': '2021-09-14T05:10:00.000Z', 'hashrate': '206666667', 'localHashrate': '223934014', 'validShares': 30, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '221725490'}
+nv3080ti + 22 @ 2021-09-14T05:20:00.000Z
+    res body: {'time': '2021-09-14T05:20:00.000Z', 'hashrate': '146666667', 'localHashrate': '223798986', 'validShares': 22, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220852713'}
+nv3080ti + 38 @ 2021-09-14T05:30:00.000Z
+    res body: {'time': '2021-09-14T05:30:00.000Z', 'hashrate': '253333333', 'localHashrate': '224347950', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221226054'}
+nv3080ti + 28 @ 2021-09-14T05:40:00.000Z
+    res body: {'time': '2021-09-14T05:40:00.000Z', 'hashrate': '186666667', 'localHashrate': '224045086', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220833333'}
+nv3080ti + 36 @ 2021-09-14T05:50:00.000Z
+    res body: {'time': '2021-09-14T05:50:00.000Z', 'hashrate': '240000000', 'localHashrate': '223327614', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221048689'}
+nv3080ti + 24 @ 2021-09-14T06:00:00.000Z
+    res body: {'time': '2021-09-14T06:00:00.000Z', 'hashrate': '160000000', 'localHashrate': '222276600', 'validShares': 24, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220370370'}
+nv3080ti + 30 @ 2021-09-14T06:10:00.000Z
+    res body: {'time': '2021-09-14T06:10:00.000Z', 'hashrate': '200000000', 'localHashrate': '224429957', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220146520'}
+nv3080ti + 36 @ 2021-09-14T06:20:00.000Z
+    res body: {'time': '2021-09-14T06:20:00.000Z', 'hashrate': '240000000', 'localHashrate': '222949714', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220362319'}
+nv3080ti + 40 @ 2021-09-14T06:30:00.000Z
+    res body: {'time': '2021-09-14T06:30:00.000Z', 'hashrate': '266666667', 'localHashrate': '225465133', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220860215'}
+nv3080ti + 50 @ 2021-09-14T06:40:00.000Z
+    res body: {'time': '2021-09-14T06:40:00.000Z', 'hashrate': '333333333', 'localHashrate': '223804200', 'validShares': 50, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222056738'}
+nv3080ti + 42 @ 2021-09-14T06:50:00.000Z
+    res body: {'time': '2021-09-14T06:50:00.000Z', 'hashrate': '280000000', 'localHashrate': '224046657', 'validShares': 42, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222666667'}
+nv3080ti + 18 @ 2021-09-14T07:00:00.000Z
+    res body: {'time': '2021-09-14T07:00:00.000Z', 'hashrate': '120000000', 'localHashrate': '223929567', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221597222'}
+nv3080ti + 44 @ 2021-09-14T07:10:00.000Z
+    res body: {'time': '2021-09-14T07:10:00.000Z', 'hashrate': '293333333', 'localHashrate': '223917471', 'validShares': 44, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222336770'}
+nv3080ti + 30 @ 2021-09-14T07:20:00.000Z
+    res body: {'time': '2021-09-14T07:20:00.000Z', 'hashrate': '200000000', 'localHashrate': '224706600', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '222108844'}
+nv3080ti + 14 @ 2021-09-14T07:30:00.000Z
+    res body: {'time': '2021-09-14T07:30:00.000Z', 'hashrate': '93333333', 'localHashrate': '224449767', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220808081'}
+nv3080ti + 12 @ 2021-09-14T07:40:00.000Z
+    res body: {'time': '2021-09-14T07:40:00.000Z', 'hashrate': '80000000', 'localHashrate': '224255671', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219400000'}
+nv3080ti + 34 @ 2021-09-14T07:50:00.000Z
+    res body: {'time': '2021-09-14T07:50:00.000Z', 'hashrate': '226666667', 'localHashrate': '223815986', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219471947'}
+nv3080ti + 36 @ 2021-09-14T08:00:00.000Z
+    res body: {'time': '2021-09-14T08:00:00.000Z', 'hashrate': '240000000', 'localHashrate': '223078000', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219673203'}
+nv3080ti + 26 @ 2021-09-14T08:10:00.000Z
+    res body: {'time': '2021-09-14T08:10:00.000Z', 'hashrate': '173333333', 'localHashrate': '224082229', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219223301'}
+nv3080ti + 32 @ 2021-09-14T08:20:00.000Z
+    res body: {'time': '2021-09-14T08:20:00.000Z', 'hashrate': '213333333', 'localHashrate': '223369143', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219166667'}
+nv3080ti + 26 @ 2021-09-14T08:30:00.000Z
+    res body: {'time': '2021-09-14T08:30:00.000Z', 'hashrate': '173333333', 'localHashrate': '225545017', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218730159'}
+nv3080ti + 48 @ 2021-09-14T08:40:00.000Z
+    res body: {'time': '2021-09-14T08:40:00.000Z', 'hashrate': '320000000', 'localHashrate': '223882414', 'validShares': 48, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219685535'}
+nv3080ti + 44 @ 2021-09-14T08:50:00.000Z
+    res body: {'time': '2021-09-14T08:50:00.000Z', 'hashrate': '293333333', 'localHashrate': '223601457', 'validShares': 44, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220373832'}
+nv3080ti + 34 @ 2021-09-14T09:00:00.000Z
+    res body: {'time': '2021-09-14T09:00:00.000Z', 'hashrate': '226666667', 'localHashrate': '224000283', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220432099'}
+nv3080ti + 36 @ 2021-09-14T09:10:00.000Z
+    res body: {'time': '2021-09-14T09:10:00.000Z', 'hashrate': '240000000', 'localHashrate': '223845286', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220611621'}
+nv3080ti's share: 2878(+962) -> 3840
+
+mileyzdy + 16 @ 2021-09-14T04:30:00.000Z
+    res body: {'time': '2021-09-14T04:30:00.000Z', 'hashrate': '106666667', 'localHashrate': '67021071', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '25739130'}
+mileyzdy + 8 @ 2021-09-14T04:40:00.000Z
+    res body: {'time': '2021-09-14T04:40:00.000Z', 'hashrate': '53333333', 'localHashrate': '68277388', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '25977011'}
+mileyzdy + 8 @ 2021-09-14T04:50:00.000Z
+    res body: {'time': '2021-09-14T04:50:00.000Z', 'hashrate': '53333333', 'localHashrate': '69509414', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '26210826'}
+mileyzdy + 18 @ 2021-09-14T05:00:00.000Z
+    res body: {'time': '2021-09-14T05:00:00.000Z', 'hashrate': '120000000', 'localHashrate': '70437313', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '27005650'}
+mileyzdy + 8 @ 2021-09-14T05:10:00.000Z
+    res body: {'time': '2021-09-14T05:10:00.000Z', 'hashrate': '53333333', 'localHashrate': '71107714', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '27226891'}
+mileyzdy + 8 @ 2021-09-14T05:20:00.000Z
+    res body: {'time': '2021-09-14T05:20:00.000Z', 'hashrate': '53333333', 'localHashrate': '72858775', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '27444444'}
+mileyzdy + 6 @ 2021-09-14T05:30:00.000Z
+    res body: {'time': '2021-09-14T05:30:00.000Z', 'hashrate': '40000000', 'localHashrate': '71681550', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '27548209'}
+mileyzdy + 8 @ 2021-09-14T05:40:00.000Z
+    res body: {'time': '2021-09-14T05:40:00.000Z', 'hashrate': '53333333', 'localHashrate': '72024333', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '27759563'}
+mileyzdy + 16 @ 2021-09-14T05:50:00.000Z
+    res body: {'time': '2021-09-14T05:50:00.000Z', 'hashrate': '106666667', 'localHashrate': '71250225', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '28401084'}
+mileyzdy + 14 @ 2021-09-14T06:00:00.000Z
+    res body: {'time': '2021-09-14T06:00:00.000Z', 'hashrate': '93333333', 'localHashrate': '71794150', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '28924731'}
+mileyzdy + 6 @ 2021-09-14T06:10:00.000Z
+    res body: {'time': '2021-09-14T06:10:00.000Z', 'hashrate': '46666667', 'localHashrate': '72193286', 'validShares': 6, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '29066667'}
+mileyzdy + 4 @ 2021-09-14T06:20:00.000Z
+    res body: {'time': '2021-09-14T06:20:00.000Z', 'hashrate': '26666667', 'localHashrate': '71556220', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '29047619'}
+mileyzdy + 8 @ 2021-09-14T06:30:00.000Z
+    res body: {'time': '2021-09-14T06:30:00.000Z', 'hashrate': '53333333', 'localHashrate': '72222188', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '29238845'}
+mileyzdy + 12 @ 2021-09-14T06:40:00.000Z
+    res body: {'time': '2021-09-14T06:40:00.000Z', 'hashrate': '80000000', 'localHashrate': '71462000', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '29635417'}
+mileyzdy + 8 @ 2021-09-14T06:50:00.000Z
+    res body: {'time': '2021-09-14T06:50:00.000Z', 'hashrate': '53333333', 'localHashrate': '71883425', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '29819121'}
+mileyzdy + 4 @ 2021-09-14T07:00:00.000Z
+    res body: {'time': '2021-09-14T07:00:00.000Z', 'hashrate': '26666667', 'localHashrate': '72145100', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '29794872'}
+mileyzdy + 4 @ 2021-09-14T07:10:00.000Z
+    res body: {'time': '2021-09-14T07:10:00.000Z', 'hashrate': '26666667', 'localHashrate': '71951975', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '29770992'}
+mileyzdy + 6 @ 2021-09-14T07:20:00.000Z
+    res body: {'time': '2021-09-14T07:20:00.000Z', 'hashrate': '40000000', 'localHashrate': '70695033', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '29848485'}
+mileyzdy + 14 @ 2021-09-14T07:30:00.000Z
+    res body: {'time': '2021-09-14T07:30:00.000Z', 'hashrate': '93333333', 'localHashrate': '71792500', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '30325815'}
+mileyzdy + 8 @ 2021-09-14T07:40:00.000Z
+    res body: {'time': '2021-09-14T07:40:00.000Z', 'hashrate': '53333333', 'localHashrate': '72538060', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '30497512'}
+mileyzdy + 18 @ 2021-09-14T07:50:00.000Z
+    res body: {'time': '2021-09-14T07:50:00.000Z', 'hashrate': '120000000', 'localHashrate': '72214478', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '31160494'}
+mileyzdy + 0 @ 2021-09-14T08:00:00.000Z
+    res body: {'time': '2021-09-14T08:00:00.000Z', 'hashrate': '0', 'localHashrate': '0', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '30931373'}
+mileyzdy + 6 @ 2021-09-14T08:10:00.000Z
+    res body: {'time': '2021-09-14T08:10:00.000Z', 'hashrate': '40000000', 'localHashrate': '72584233', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '30997567'}
+mileyzdy + 4 @ 2021-09-14T08:20:00.000Z
+    res body: {'time': '2021-09-14T08:20:00.000Z', 'hashrate': '26666667', 'localHashrate': '72241983', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '30966184'}
+mileyzdy + 8 @ 2021-09-14T08:30:00.000Z
+    res body: {'time': '2021-09-14T08:30:00.000Z', 'hashrate': '60000000', 'localHashrate': '71640957', 'validShares': 8, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '31175060'}
+mileyzdy + 0 @ 2021-09-14T08:40:00.000Z
+    res body: {'time': '2021-09-14T08:40:00.000Z', 'hashrate': '0', 'localHashrate': '70299467', 'validShares': 0, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '30952381'}
+mileyzdy + 4 @ 2021-09-14T08:50:00.000Z
+    res body: {'time': '2021-09-14T08:50:00.000Z', 'hashrate': '26666667', 'localHashrate': '71433400', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '30921986'}
+mileyzdy + 10 @ 2021-09-14T09:00:00.000Z
+    res body: {'time': '2021-09-14T09:00:00.000Z', 'hashrate': '66666667', 'localHashrate': '73000371', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '31173709'}
+mileyzdy + 22 @ 2021-09-14T09:10:00.000Z
+    res body: {'time': '2021-09-14T09:10:00.000Z', 'hashrate': '146666667', 'localHashrate': '72674314', 'validShares': 22, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '31981352'}
+mileyzdy's share: 3072(+256) -> 3328
+
+nv3080ti + 34 @ 2021-09-14T09:20:00.000Z
+    res body: {'time': '2021-09-14T09:20:00.000Z', 'hashrate': '226666667', 'localHashrate': '224786471', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220666667'}
+nv3080ti's share: 3840(+34) -> 3874
+
+mileyzdy + 10 @ 2021-09-14T09:20:00.000Z
+    res body: {'time': '2021-09-14T09:20:00.000Z', 'hashrate': '66666667', 'localHashrate': '72183440', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32167832'}
+mileyzdy's share: 3328(+10) -> 3338
+
+mileyzdy + 16 @ 2021-09-14T09:30:00.000Z
+    res body: {'time': '2021-09-14T09:30:00.000Z', 'hashrate': '106666667', 'localHashrate': '70020643', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32447552'}
+mileyzdy's share: 3338(+16) -> 3354
+
+nv3080ti + 24 @ 2021-09-14T09:30:00.000Z
+    res body: {'time': '2021-09-14T09:30:00.000Z', 'hashrate': '173333333', 'localHashrate': '223196833', 'validShares': 24, 'staleShares': 4, 'invalidShares': 0, 'meanHashrate': '220240240'}
+nv3080ti's share: 3874(+24) -> 3898
+
+mileyzdy + 12 @ 2021-09-14T09:40:00.000Z
+    res body: {'time': '2021-09-14T09:40:00.000Z', 'hashrate': '80000000', 'localHashrate': '68230229', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32820513'}
+mileyzdy's share: 3354(+12) -> 3366
+
+nv3080ti + 46 @ 2021-09-14T09:40:00.000Z
+    res body: {'time': '2021-09-14T09:40:00.000Z', 'hashrate': '306666667', 'localHashrate': '224937814', 'validShares': 46, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221011905'}
+nv3080ti's share: 3898(+46) -> 3944
+
+mileyzdy + 14 @ 2021-09-14T09:50:00.000Z
+    res body: {'time': '2021-09-14T09:50:00.000Z', 'hashrate': '93333333', 'localHashrate': '69571629', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33051643'}
+mileyzdy's share: 3366(+14) -> 3380
+
+nv3080ti + 36 @ 2021-09-14T09:50:00.000Z
+    res body: {'time': '2021-09-14T09:50:00.000Z', 'hashrate': '240000000', 'localHashrate': '222984343', 'validShares': 36, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '221179941'}
+nv3080ti's share: 3944(+36) -> 3980
+
+mileyzdy + 8 @ 2021-09-14T10:00:00.000Z
+    res body: {'time': '2021-09-14T10:00:00.000Z', 'hashrate': '53333333', 'localHashrate': '69699157', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33193473'}
+mileyzdy's share: 3380(+8) -> 3388
+
+nv3080ti + 30 @ 2021-09-14T10:00:00.000Z
+    res body: {'time': '2021-09-14T10:00:00.000Z', 'hashrate': '200000000', 'localHashrate': '225950183', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220994152'}
+nv3080ti's share: 3980(+30) -> 4010
+
+mileyzdy + 6 @ 2021-09-14T10:10:00.000Z
+    res body: {'time': '2021-09-14T10:10:00.000Z', 'hashrate': '40000000', 'localHashrate': '68023600', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32913753'}
+mileyzdy's share: 3388(+6) -> 3394
+
+nv3080ti + 32 @ 2021-09-14T10:10:00.000Z
+    res body: {'time': '2021-09-14T10:10:00.000Z', 'hashrate': '213333333', 'localHashrate': '223945443', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220927536'}
+nv3080ti's share: 4010(+32) -> 4042
+
+mileyzdy + 8 @ 2021-09-14T10:20:00.000Z
+    res body: {'time': '2021-09-14T10:20:00.000Z', 'hashrate': '53333333', 'localHashrate': '69244171', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32447552'}
+mileyzdy's share: 3394(+8) -> 3402
+
+nv3080ti + 30 @ 2021-09-14T10:20:00.000Z
+    res body: {'time': '2021-09-14T10:20:00.000Z', 'hashrate': '200000000', 'localHashrate': '225566114', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220747126'}
+nv3080ti's share: 4042(+30) -> 4072
+
+nv3080ti + 24 @ 2021-09-14T10:30:00.000Z
+    res body: {'time': '2021-09-14T10:30:00.000Z', 'hashrate': '160000000', 'localHashrate': '223193283', 'validShares': 24, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220227920'}
+nv3080ti's share: 4072(+24) -> 4096
+
+mileyzdy + 6 @ 2021-09-14T10:30:00.000Z
+    res body: {'time': '2021-09-14T10:30:00.000Z', 'hashrate': '40000000', 'localHashrate': '70400686', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32167832'}
+mileyzdy's share: 3402(+6) -> 3408
+
+mileyzdy + 8 @ 2021-09-14T10:40:00.000Z
+    res body: {'time': '2021-09-14T10:40:00.000Z', 'hashrate': '53333333', 'localHashrate': '71820543', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '31888112'}
+mileyzdy's share: 3408(+8) -> 3416
+
+nv3080ti + 46 @ 2021-09-14T10:40:00.000Z
+    res body: {'time': '2021-09-14T10:40:00.000Z', 'hashrate': '306666667', 'localHashrate': '223552200', 'validShares': 46, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220960452'}
+nv3080ti's share: 4096(+46) -> 4142
+
+mileyzdy + 18 @ 2021-09-14T10:50:00.000Z
+    res body: {'time': '2021-09-14T10:50:00.000Z', 'hashrate': '120000000', 'localHashrate': '71994643', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32540793'}
+mileyzdy's share: 3416(+18) -> 3434
+
+nv3080ti + 26 @ 2021-09-14T10:50:00.000Z
+    res body: {'time': '2021-09-14T10:50:00.000Z', 'hashrate': '180000000', 'localHashrate': '223924271', 'validShares': 26, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '220616246'}
+nv3080ti's share: 4142(+26) -> 4168
+
+mileyzdy + 6 @ 2021-09-14T11:00:00.000Z
+    res body: {'time': '2021-09-14T11:00:00.000Z', 'hashrate': '40000000', 'localHashrate': '71987900', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32447552'}
+mileyzdy's share: 3434(+6) -> 3440
+
+nv3080ti + 32 @ 2021-09-14T11:00:00.000Z
+    res body: {'time': '2021-09-14T11:00:00.000Z', 'hashrate': '220000000', 'localHashrate': '224964533', 'validShares': 32, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '220611111'}
+nv3080ti's share: 4168(+32) -> 4200
+
+mileyzdy + 4 @ 2021-09-14T11:10:00.000Z
+    res body: {'time': '2021-09-14T11:10:00.000Z', 'hashrate': '26666667', 'localHashrate': '71209538', 'validShares': 4, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32167832'}
+mileyzdy's share: 3440(+4) -> 3444
+
+nv3080ti + 24 @ 2021-09-14T11:10:00.000Z
+    res body: {'time': '2021-09-14T11:10:00.000Z', 'hashrate': '160000000', 'localHashrate': '223679314', 'validShares': 24, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220110193'}
+nv3080ti's share: 4200(+24) -> 4224
+
+mileyzdy + 14 @ 2021-09-14T11:20:00.000Z
+    res body: {'time': '2021-09-14T11:20:00.000Z', 'hashrate': '93333333', 'localHashrate': '72587986', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32447552'}
+mileyzdy's share: 3444(+14) -> 3458
+
+nv3080ti + 28 @ 2021-09-14T11:20:00.000Z
+    res body: {'time': '2021-09-14T11:20:00.000Z', 'hashrate': '186666667', 'localHashrate': '223741629', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219836066'}
+nv3080ti's share: 4224(+28) -> 4252
+
+mileyzdy + 12 @ 2021-09-14T11:30:00.000Z
+    res body: {'time': '2021-09-14T11:30:00.000Z', 'hashrate': '80000000', 'localHashrate': '71861000', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32354312'}
+mileyzdy's share: 3458(+12) -> 3470
+
+nv3080ti + 40 @ 2021-09-14T11:30:00.000Z
+    res body: {'time': '2021-09-14T11:30:00.000Z', 'hashrate': '266666667', 'localHashrate': '224265433', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220216802'}
+nv3080ti's share: 4252(+40) -> 4292
+
+nv3080ti + 38 @ 2021-09-14T11:40:00.000Z
+    res body: {'time': '2021-09-14T11:40:00.000Z', 'hashrate': '260000000', 'localHashrate': '223150700', 'validShares': 38, 'staleShares': 2, 'invalidShares': 0, 'meanHashrate': '220537634'}
+nv3080ti's share: 4292(+38) -> 4330
+
+mileyzdy + 14 @ 2021-09-14T11:40:00.000Z
+    res body: {'time': '2021-09-14T11:40:00.000Z', 'hashrate': '93333333', 'localHashrate': '72715671', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32540793'}
+mileyzdy's share: 3470(+14) -> 3484
+
+nv3080ti + 26 @ 2021-09-14T11:50:00.000Z
+    res body: {'time': '2021-09-14T11:50:00.000Z', 'hashrate': '173333333', 'localHashrate': '225240800', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220160000'}
+nv3080ti's share: 4330(+26) -> 4356
+
+mileyzdy + 16 @ 2021-09-14T11:50:00.000Z
+    res body: {'time': '2021-09-14T11:50:00.000Z', 'hashrate': '106666667', 'localHashrate': '68558325', 'validShares': 16, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33006993'}
+mileyzdy's share: 3484(+16) -> 3500
+
+nv3080ti + 38 @ 2021-09-14T12:00:00.000Z
+    res body: {'time': '2021-09-14T12:00:00.000Z', 'hashrate': '253333333', 'localHashrate': '223092033', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220423280'}
+nv3080ti's share: 4356(+38) -> 4394
+
+mileyzdy + 20 @ 2021-09-14T12:00:00.000Z
+    res body: {'time': '2021-09-14T12:00:00.000Z', 'hashrate': '133333333', 'localHashrate': '71263571', 'validShares': 20, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33659674'}
+mileyzdy's share: 3500(+20) -> 3520
+
+nv3080ti + 38 @ 2021-09-14T12:10:00.000Z
+    res body: {'time': '2021-09-14T12:10:00.000Z', 'hashrate': '253333333', 'localHashrate': '222980157', 'validShares': 38, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220682415'}
+nv3080ti's share: 4394(+38) -> 4432
+
+mileyzdy + 2 @ 2021-09-14T12:10:00.000Z
+    res body: {'time': '2021-09-14T12:10:00.000Z', 'hashrate': '13333333', 'localHashrate': '71579843', 'validShares': 2, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33006993'}
+mileyzdy's share: 3520(+2) -> 3522
+
+mileyzdy + 12 @ 2021-09-14T12:20:00.000Z
+    res body: {'time': '2021-09-14T12:20:00.000Z', 'hashrate': '80000000', 'localHashrate': '71328567', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33379953'}
+mileyzdy's share: 3522(+12) -> 3534
+
+nv3080ti + 28 @ 2021-09-14T12:20:00.000Z
+    res body: {'time': '2021-09-14T12:20:00.000Z', 'hashrate': '186666667', 'localHashrate': '224157714', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220416667'}
+nv3080ti's share: 4432(+28) -> 4460
+
+mileyzdy + 10 @ 2021-09-14T12:30:00.000Z
+    res body: {'time': '2021-09-14T12:30:00.000Z', 'hashrate': '66666667', 'localHashrate': '71269313', 'validShares': 10, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33193473'}
+mileyzdy's share: 3534(+10) -> 3544
+
+nv3080ti + 28 @ 2021-09-14T12:30:00.000Z
+    res body: {'time': '2021-09-14T12:30:00.000Z', 'hashrate': '186666667', 'localHashrate': '224699183', 'validShares': 28, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220155039'}
+nv3080ti's share: 4460(+28) -> 4488
+
+mileyzdy + 12 @ 2021-09-14T12:40:00.000Z
+    res body: {'time': '2021-09-14T12:40:00.000Z', 'hashrate': '80000000', 'localHashrate': '71840738', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33379953'}
+mileyzdy's share: 3544(+12) -> 3556
+
+nv3080ti + 40 @ 2021-09-14T12:40:00.000Z
+    res body: {'time': '2021-09-14T12:40:00.000Z', 'hashrate': '266666667', 'localHashrate': '224062214', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220512821'}
+nv3080ti's share: 4488(+40) -> 4528
+
+mileyzdy + 6 @ 2021-09-14T12:50:00.000Z
+    res body: {'time': '2021-09-14T12:50:00.000Z', 'hashrate': '40000000', 'localHashrate': '71242567', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33379953'}
+mileyzdy's share: 3556(+6) -> 3562
+
+nv3080ti + 30 @ 2021-09-14T12:50:00.000Z
+    res body: {'time': '2021-09-14T12:50:00.000Z', 'hashrate': '200000000', 'localHashrate': '223772457', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '220356234'}
+nv3080ti's share: 4528(+30) -> 4558
+
+mileyzdy + 8 @ 2021-09-14T13:00:00.000Z
+    res body: {'time': '2021-09-14T13:00:00.000Z', 'hashrate': '53333333', 'localHashrate': '71331586', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32913753'}
+mileyzdy's share: 3562(+8) -> 3570
+
+nv3080ti + 14 @ 2021-09-14T13:00:00.000Z
+    res body: {'time': '2021-09-14T13:00:00.000Z', 'hashrate': '93333333', 'localHashrate': '223294433', 'validShares': 14, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219393939'}
+nv3080ti's share: 4558(+14) -> 4572
+
+mileyzdy + 8 @ 2021-09-14T13:10:00.000Z
+    res body: {'time': '2021-09-14T13:10:00.000Z', 'hashrate': '53333333', 'localHashrate': '71027114', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33006993'}
+mileyzdy's share: 3570(+8) -> 3578
+
+nv3080ti + 34 @ 2021-09-14T13:10:00.000Z
+    res body: {'time': '2021-09-14T13:10:00.000Z', 'hashrate': '226666667', 'localHashrate': '223168771', 'validShares': 34, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219448622'}
+nv3080ti's share: 4572(+34) -> 4606
+
+mileyzdy + 8 @ 2021-09-14T13:20:00.000Z
+    res body: {'time': '2021-09-14T13:20:00.000Z', 'hashrate': '53333333', 'localHashrate': '73282213', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '33100233'}
+mileyzdy's share: 3578(+8) -> 3586
+
+nv3080ti + 40 @ 2021-09-14T13:20:00.000Z
+    res body: {'time': '2021-09-14T13:20:00.000Z', 'hashrate': '266666667', 'localHashrate': '224281029', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219800995'}
+nv3080ti's share: 4606(+40) -> 4646
+
+nv3080ti + 22 @ 2021-09-14T13:30:00.000Z
+    res body: {'time': '2021-09-14T13:30:00.000Z', 'hashrate': '146666667', 'localHashrate': '223166850', 'validShares': 22, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219259259'}
+nv3080ti's share: 4646(+22) -> 4668
+

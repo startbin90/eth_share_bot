@@ -68,9 +68,10 @@ class worker_dict:
     
     def pop_entry_from_history(self, name, ts):
         if name in self.d and "history" in self.d[name]:
-            return self.d[name]["history"].pop(ts, None)
+            ret = self.d[name]["history"].pop(ts, None)
+            return True if ret != None else False
         else:
-            return None
+            return False
     
     def set_entry_to_history(self, name, ts, shares):
         if name in self.d and "history" in self.d[name]:
@@ -285,10 +286,14 @@ async def fetch_data():
                 if new_share - old_share >= 0:
                     sign = "+"
                 msg += "    {} shares @ {} adjusted to {}({}{})\n".format(old_share, ts, new_share, sign, new_share - old_share)
-            msg += "total adjustment: {}\n".format(adjustment_delta)
+            sign = ""
+            if adjustment_delta >= 0:
+                sign = "+"
+            worker_shares = workers.get_shares(name)
+            msg += "total adjustment: {}({}{}) -> {}".format(worker_shares, sign, adjustment_delta, worker_shares + adjustment_delta)
             await client.get_channel(channel_id).send(msg)
             print(msg)
-            res_log.write(msg)
+            res_log.write(msg + "\n")
     
         workers.update_share_and_ts(name, adjustment_delta)
         
