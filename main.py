@@ -3,8 +3,8 @@ import requests
 import json
 import os
 from discord.ext import tasks
-from keep_alive import keep_alive
 from datetime import datetime
+import platform
 
 # Json format
 # {
@@ -22,6 +22,13 @@ def str_to_ts(s):
 def ts_to_str(ts):
     return ts.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
+
+MACOS = 'Darwin'
+LINUX = 'Linux'
+WIN = 'Windows'
+onLocal = False
+if platform.system() == MACOS:
+    onLOcal = True
 
 log_channel = 885966677689401386
 test_channel = 639512541701079073
@@ -47,7 +54,7 @@ class worker_dict:
         self.update_to_channel = True
 
     def get_total_shares(self):
-        return sum([value["shares"] for _ , value in self.d.items()])
+        return sum([value["shares"] for _, value in self.d.items()])
 
     def get_workers(self):
         return list(self.d.keys())
@@ -65,30 +72,28 @@ class worker_dict:
             return self.d[name]["history"]
         else:
             return None
-    
+
     def pop_entry_from_history(self, name, ts):
         if name in self.d and "history" in self.d[name]:
             ret = self.d[name]["history"].pop(ts, None)
             return True if ret != None else False
         else:
             return False
-    
+
     def set_entry_to_history(self, name, ts, shares):
         if name in self.d and "history" in self.d[name]:
             self.d[name]["history"][ts] = shares
         else:
             return None
-            
+
     def set(self, name, shares=0, ts=start_ts):
         self.d[name] = {"shares": shares, "latest_time": ts, "history": {}}
-        # self.dump_to_file()
 
     def update_share_and_ts(self, name, new_shares, ts=None):
         if name in self.d:
             self.d[name]["shares"] += new_shares
             if ts:
                 self.d[name]["latest_time"] = ts
-            # self.dump_to_file()
 
     def set_online_workers(self, lst):
         self.online_workers = lst
@@ -152,7 +157,7 @@ async def on_ready():
     workers.load_from_json()
     online_workers = fetch_workers()
     workers.set_online_workers(online_workers)
-    
+
     msg = "\n:white_check_mark: Bot is online. "
     if workers.loaded_from_json:
         msg += "I recovered these workers from logfile:\n\n"
@@ -212,7 +217,7 @@ async def on_message(message):
         for worker_name in worker_names:
             worker_share = workers.get_shares(worker_name)
             share_ratio = worker_share / total
-            eth_profit = balance * share_ratio 
+            eth_profit = balance * share_ratio
             usd_profit = eth_in_usd * eth_profit
             msg += "{} has {}/{}({}) shares, equivalent to {} ETH or {} USD.\n".format(worker_name, worker_share, total, share_ratio, eth_profit, usd_profit)
         await client.get_channel(channel_id).send(msg)
@@ -236,7 +241,7 @@ async def fetch_data():
     if msg:
         await client.get_channel(channel_id).send(msg)
     workers.set_online_workers(online_workers)
-    
+
 
     res_log = open("res_log", "a")
     has_change = False
@@ -256,8 +261,8 @@ async def fetch_data():
         res = json.loads(r.text)
         if res["code"] != 200:
             return
-        
-        
+
+
         # validate all history entry/ remove outdated ones
         history = workers.get_history(name)
         ts_lst = list(history.keys())
@@ -294,9 +299,9 @@ async def fetch_data():
             await client.get_channel(channel_id).send(msg)
             print(msg)
             res_log.write(msg + "\n")
-    
+
         workers.update_share_and_ts(name, adjustment_delta)
-        
+
         # test_share_sum = 0
         shares_delta = 0
         latest_time = workers.get_latest_time(name)
@@ -309,30 +314,36 @@ async def fetch_data():
                 workers.set_entry_to_history(name, ts, share)
                 shares_delta += share
                 latest_time = ts if str_to_ts(ts) > str_to_ts(latest_time) else latest_time
-                
+
                 msg = "{} + {} @ {}\n".format(name, share, ts)
                 msg += "    res body: {}".format(str(entry))
                 print(msg)
                 res_log.write(msg + "\n")
                 # print("{} new shares for worker {} received, report at {}".format(share, name, ts))
-        
-        
+
+
         # print("test share sum {} for {}; ".format(test_share_sum, name), end="", flush=True)
         if shares_delta and workers.update_to_channel:
             msg = "{}'s share: {}(+{}) -> {}".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
             await client.get_channel(channel_id).send(msg)
             print(msg)
             res_log.write(msg + "\n\n")
-        
+
         workers.update_share_and_ts(name, shares_delta, latest_time)
 
 
     if has_change:
         workers.dump_to_file()
-    
+
     res_log.flush()
     res_log.close()
 
-
-keep_alive()
-client.run(os.getenv("TOKEN"))
+TOKEN = ""
+if not onLocal:
+    from keep_alive import keep_alive
+    keep_alive()
+    TOKEN += os.getenv("TOKEN")
+else:
+    with open("../discord_bot_token", "r") as f:
+        TOKEN += f.read()
+client.run(TOKEN)

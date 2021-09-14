@@ -1596,3 +1596,45 @@ nv3080ti + 22 @ 2021-09-14T13:30:00.000Z
     res body: {'time': '2021-09-14T13:30:00.000Z', 'hashrate': '146666667', 'localHashrate': '223166850', 'validShares': 22, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219259259'}
 nv3080ti's share: 4646(+22) -> 4668
 
+nv3080ti + 26 @ 2021-09-14T13:40:00.000Z
+    res body: {'time': '2021-09-14T13:40:00.000Z', 'hashrate': '173333333', 'localHashrate': '224565786', 'validShares': 26, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218921569'}
+nv3080ti's share: 4668(+26) -> 4694
+
+mileyzdy + 8 @ 2021-09-14T13:30:00.000Z
+    res body: {'time': '2021-09-14T13:30:00.000Z', 'hashrate': '53333333', 'localHashrate': '72350083', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32206573'}
+mileyzdy + 6 @ 2021-09-14T13:40:00.000Z
+    res body: {'time': '2021-09-14T13:40:00.000Z', 'hashrate': '40000000', 'localHashrate': '70523617', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32261072'}
+mileyzdy's share: 3586(+14) -> 3600
+
+nv3080ti + 32 @ 2021-09-14T13:50:00.000Z
+    res body: {'time': '2021-09-14T13:50:00.000Z', 'hashrate': '213333333', 'localHashrate': '223501657', 'validShares': 32, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218880779'}
+nv3080ti's share: 4694(+32) -> 4726
+
+mileyzdy + 18 @ 2021-09-14T13:50:00.000Z
+    res body: {'time': '2021-09-14T13:50:00.000Z', 'hashrate': '120000000', 'localHashrate': '70846771', 'validShares': 18, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '32167832'}
+mileyzdy's share: 3600(+18) -> 3618
+
+nv3080ti + 30 @ 2021-09-14T14:00:00.000Z
+    res body: {'time': '2021-09-14T14:00:00.000Z', 'hashrate': '200000000', 'localHashrate': '224229983', 'validShares': 30, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '218743961'}
+nv3080ti's share: 4726(+30) -> 4756
+
+mileyzdy + 6 @ 2021-09-14T14:00:00.000Z
+    res body: {'time': '2021-09-14T14:00:00.000Z', 'hashrate': '40000000', 'localHashrate': '71277700', 'validShares': 6, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '31888112'}
+mileyzdy's share: 3618(+6) -> 3624
+
+nv3080ti + 40 @ 2021-09-14T14:10:00.000Z
+    res body: {'time': '2021-09-14T14:10:00.000Z', 'hashrate': '266666667', 'localHashrate': '224015029', 'validShares': 40, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219088729'}
+nv3080ti's share: 4756(+40) -> 4796
+
+mileyzdy + 12 @ 2021-09-14T14:10:00.000Z
+    res body: {'time': '2021-09-14T14:10:00.000Z', 'hashrate': '80000000', 'localHashrate': '70702275', 'validShares': 12, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '31888112'}
+mileyzdy's share: 3624(+12) -> 3636
+
+nv3080ti + 42 @ 2021-09-14T14:20:00.000Z
+    res body: {'time': '2021-09-14T14:20:00.000Z', 'hashrate': '280000000', 'localHashrate': '223943157', 'validShares': 42, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '219523810'}
+nv3080ti's share: 4796(+42) -> 4838
+
+mileyzdy + 8 @ 2021-09-14T14:20:00.000Z
+    res body: {'time': '2021-09-14T14:20:00.000Z', 'hashrate': '53333333', 'localHashrate': '71689900', 'validShares': 8, 'staleShares': 0, 'invalidShares': 0, 'meanHashrate': '31981352'}
+mileyzdy's share: 3636(+8) -> 3644
+
