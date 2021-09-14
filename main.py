@@ -51,7 +51,7 @@ class worker_dict:
         self.d = d
         self.loaded_from_json = False
         self.online_workers = []
-        self.update_to_channel = True
+        self.allowed_to_talk = True
 
     def get_total_shares(self):
         return sum([value["shares"] for _, value in self.d.items()])
@@ -181,14 +181,14 @@ async def on_message(message):
         msg = str(workers)
         await client.get_channel(channel_id).send(msg)
     if message.content.startswith("$v"):
-        workers.update_to_channel = True
+        workers.allowed_to_talk = True
         await client.get_channel(channel_id).send("Verbose mode ON")
     if message.content.startswith("$shutup"):
-        workers.update_to_channel = False
+        workers.allowed_to_talk = False
         await client.get_channel(channel_id).send(
             "Verbose mode OFF, now I shutup :slight_smile: ")
     if message.content.startswith("$status"):
-        if workers.update_to_channel:
+        if workers.allowed_to_talk:
             msg = "Verbose: :green_circle: \n"
         else:
             msg = "Verbose: :red_circle: \n"
@@ -243,15 +243,26 @@ async def fetch_data():
     workers.set_online_workers(online_workers)
 
 
-    res_log = open("res_log", "a")
-    has_change = False
+    # has change(new/delete/modify) in local_log.json
+    has_file_change = False
+    # flush_to_discord = True
+    discord_msg = ""
+    res_log_msg = ""
     for name in workers.get_online_workers():
-
+        discord_msg_worker = ""
+        res_log_msg_worker = ""
         ## init new worker if found
         if name not in workers.get_workers():
             workers.set(name)
-            has_change = True
-            await client.get_channel(channel_id).send("welcome new worker: " + name)
+            has_file_change = True
+            # flush_to_discord = True
+            msg = "{} joined mining for the first time, welcome!\n".format(name)
+            discord_msg_worker += msg
+            res_log_msg_worker += msg
+        # else:
+            # msg = "Updates for {}:\n".format(name)
+            # discord_msg_worker += msg
+            # res_log_msg_worker += msg
 
         ## get current worker share history
         payload = {'currency': 'ETH', 'miner': eth_wallet, 'worker': name}
@@ -270,73 +281,89 @@ async def fetch_data():
         adjustment_log = []
         adjustment_delta = 0
         for ts in ts_lst:
+            ## check and remove outdated entries
             if ts not in res_history:
-                ## remove outdated entry
-                has_change = True
+                has_file_change = True
                 if not workers.pop_entry_from_history(name, ts):
                     print("Error: old entry removal failed")
             else:
+            ## check and modify existing entries
                 new_share = res_history[ts]
                 share_in_record = history[ts]
                 if new_share != share_in_record:
-                    has_change = True
+                    has_file_change = True
+                    # flush_to_discord = True
                     adjustment_log.append((ts, share_in_record, new_share))
                     adjustment_delta += new_share - share_in_record
                     workers.set_entry_to_history(name, ts, new_share)
 
-        if adjustment_log and workers.update_to_channel:
-            msg = "{} share change detected\n".format(name)
+        if adjustment_log: # has_file_change is true namely
+            msg = ""
             for ts, old_share, new_share in adjustment_log:
                 sign = ""
                 if new_share - old_share >= 0:
                     sign = "+"
-                msg += "    {} shares @ {} adjusted to {}({}{})\n".format(old_share, ts, new_share, sign, new_share - old_share)
+                msg += "        {} shares @ {} adjusted to {}({}{})\n".format(old_share, ts, new_share, sign, new_share - old_share)
+            
             sign = ""
             if adjustment_delta >= 0:
                 sign = "+"
             worker_shares = workers.get_shares(name)
-            msg += "total adjustment: {}({}{}) -> {}".format(worker_shares, sign, adjustment_delta, worker_shares + adjustment_delta)
-            await client.get_channel(channel_id).send(msg)
-            print(msg)
-            res_log.write(msg + "\n")
+            msg += "        total adjustment: {}({}{}) -> {}\n".format(worker_shares, sign, adjustment_delta, worker_shares + adjustment_delta)
+            discord_msg_worker += "        adjustment detected:\n" + msg
+            res_log_msg_worker += "        adjustment detected\n" + msg
+            workers.update_share_and_ts(name, adjustment_delta)
+            
+            # if workers.allowed_to_talk:
+            #     await client.get_channel(channel_id).send(msg)
+            # print(msg)
+            # res_log_msg += msg + "\n"
 
-        workers.update_share_and_ts(name, adjustment_delta)
 
-        # test_share_sum = 0
+        test_share_sum = 0
         shares_delta = 0
         latest_time = workers.get_latest_time(name)
+        msg = ""
         for entry in res["data"]:
             ts = entry["time"]
             share = entry["validShares"]
-            # test_share_sum += share
+            test_share_sum += share
             if str_to_ts(ts) > str_to_ts(workers.get_latest_time(name)):
-                has_change = True
+                has_file_change = True
                 workers.set_entry_to_history(name, ts, share)
                 shares_delta += share
                 latest_time = ts if str_to_ts(ts) > str_to_ts(latest_time) else latest_time
 
-                msg = "{} + {} @ {}\n".format(name, share, ts)
-                msg += "    res body: {}".format(str(entry))
-                print(msg)
-                res_log.write(msg + "\n")
-                # print("{} new shares for worker {} received, report at {}".format(share, name, ts))
-
+                msg += "        {} + {} @ {}\n".format(name, share, ts)
+                # msg += "    res body: {}".format(str(entry))
+        
+        if msg:
+            res_log_msg_worker += "        new share update:\n" + msg
 
         # print("test share sum {} for {}; ".format(test_share_sum, name), end="", flush=True)
-        if shares_delta and workers.update_to_channel:
-            msg = "{}'s share: {}(+{}) -> {}".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
-            await client.get_channel(channel_id).send(msg)
-            print(msg)
-            res_log.write(msg + "\n\n")
-
+        msg = "        {}'s share: {}( + {}) -> {}\n".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
+        res_log_msg_worker += msg
+        if shares_delta: # if has change, add to discord message
+            discord_msg_worker += msg
+        
+        # update anyway
         workers.update_share_and_ts(name, shares_delta, latest_time)
 
+        if res_log_msg_worker:
+            res_log_msg += "Updates for {}:\n".format(name) + res_log_msg_worker
+        if discord_msg_worker:
+            discord_msg += discord_msg_worker
 
-    if has_change:
+    if has_file_change:
         workers.dump_to_file()
-
-    res_log.flush()
-    res_log.close()
+    if discord_msg and workers.allowed_to_talk:
+        await client.get_channel(channel_id).send(discord_msg)
+    if res_log_msg:
+        print(res_log_msg)
+        with open("res_log", "a") as res_log:
+            res_log.write(res_log_msg)
+            res_log.flush()
+        
 
 TOKEN = ""
 if not onLocal:
