@@ -232,9 +232,9 @@ async def fetch_data():
     upline = list(new - old)
     downline = list(old - new)
     msg = ""
-    if upline:
-        for name in upline:
-            msg += ":green_circle:  " + name + " is back on mining\n\n"
+    # if upline:
+    #     for name in upline:
+    #         msg += ":green_circle:  " + name + " is mining now\n\n"
     if downline:
         for name in downline:
             msg += ":red_circle:  " + name + " is removed from SparkPool now\n\n"
@@ -333,18 +333,14 @@ async def fetch_data():
                 workers.set_entry_to_history(name, ts, share)
                 shares_delta += share
                 latest_time = ts if str_to_ts(ts) > str_to_ts(latest_time) else latest_time
-
                 msg += "        {} + {} @ {}\n".format(name, share, ts)
-                # msg += "    res body: {}".format(str(entry))
-        
-        if msg:
+        if msg: # new entry/share detected
             res_log_msg_worker += "        new share update:\n" + msg
-
+            msg = "{}'s share: {}( + {}) -> {}\n".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
+            res_log_msg_worker += msg
+            if shares_delta: # if has change, add to discord message
+                discord_msg_worker += msg
         # print("test share sum {} for {}; ".format(test_share_sum, name), end="", flush=True)
-        msg = "        {}'s share: {}( + {}) -> {}\n".format(name, str(workers.get_shares(name)), shares_delta, str(workers.get_shares(name) + shares_delta))
-        res_log_msg_worker += msg
-        if shares_delta: # if has change, add to discord message
-            discord_msg_worker += msg
         
         # update anyway
         workers.update_share_and_ts(name, shares_delta, latest_time)
