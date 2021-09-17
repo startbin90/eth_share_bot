@@ -5,6 +5,7 @@ import os
 from discord.ext import tasks
 from datetime import datetime
 import platform
+from replit import db
 
 # Json format
 # {
@@ -43,7 +44,7 @@ start_ts = ts_to_str(datetime(2021, 9, 1))
 channel_id = log_channel
 eth_wallet = log_spark_wallet
 pool_api_addr = sparkpool_api_addr
-
+eth_symbol = "<:eth:888234376427614228>"
 
 
 class worker_dict:
@@ -114,6 +115,9 @@ class worker_dict:
                 s = f.read()
                 self.d = json.loads(s)
                 self.loaded_from_json = True
+
+                # if eth_wallet not in db:
+                #     db[eth_wallet] = {"share_book": self.d, "share_log": []}
         except:
             self.d = {}
             self.loaded_from_json = False
@@ -239,7 +243,11 @@ async def on_message(message):
         total = workers.get_total_shares()
         worker_name_shares = [(worker_name, workers.get_worker_shares(worker_name)) for worker_name in workers.get_stored_worker_names()]
         worker_name_shares.sort(key=lambda x: (-x[1]))
-        msg = "Balance: {} ETH, ETH price:\n:flag_us:: {} :flag_ca:: {} :flag_sg:: {} :flag_cn:: {}\nGas {} gwei, {} USD\n".format(balance, eth_usd, eth_cad, eth_sgd, eth_cny, gwei, gwei_usd)
+
+        msg = eth_symbol + ": {}  :fuelpump:: {} gwei ≈ {} USD\n".format(balance, gwei, gwei_usd)
+        msg += "Price: :flag_us:: {} :flag_ca:: {} :flag_sg:: {} :flag_cn:: {}\n".format(eth_usd, eth_cad, eth_sgd, eth_cny)
+        embed = discord.Embed(title="Profit", description= msg)
+
         for worker_name, worker_shares in worker_name_shares:
             share_ratio = worker_shares / total
             eth_profit = balance * share_ratio
@@ -247,9 +255,10 @@ async def on_message(message):
             cad_profit = eth_cad * eth_profit
             sgd_profit = eth_sgd * eth_profit
             cny_profit = eth_cny * eth_profit
-            msg += "{}:\n        {}/{}({:.2f}) shares\n".format(worker_name, worker_shares, total, share_ratio)
-            msg += "        {:.5f} ETH, :flag_us::{:.2f} :flag_ca::{:.2f} :flag_sg:: {:.2f} :flag_cn:: {:.2f}\n".format(eth_profit, usd_profit, cad_profit, sgd_profit, cny_profit)
-        await client.get_channel(channel_id).send(msg)
+            value = "{}/{}({:.2f}) shares\n".format(worker_shares, total, share_ratio) + eth_symbol + ": {:.5f} :flag_us:: {:.2f} :flag_ca:: {:.2f} :flag_sg:: {:.2f} :flag_cn:: {:.2f}\n".format(eth_profit, usd_profit, cad_profit, sgd_profit, cny_profit)
+            embed.add_field(name=worker_name, inline=False, value=value)
+        embed.add_field(name="\u200B", value="Source: [ETH Gas.watch](http://ethgas.watch) [CoinGecko](https://www.coingecko.com/)")
+        await client.get_channel(channel_id).send(embed=embed)
 
 
 @tasks.loop(seconds=5)
