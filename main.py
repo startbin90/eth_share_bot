@@ -39,7 +39,6 @@ sparkpool_api_addr = "https://www.sparkpool.com"
 # test_nano_wallet = "0x7c3d72a477f3d36a34c68990a9e62a48c0331710"
 # nanopool_api_addr = "https://api.nanopool.org/v1/eth/workers/"
 
-
 start_ts = ts_to_str(datetime(2021, 9, 1))
 channel_id = log_channel
 eth_wallet = log_spark_wallet
@@ -51,7 +50,7 @@ class worker_dict:
     def __init__(self, d=dict()):
         self.d = d
         self.loaded_from_json = False
-        self.workers_in_pool = {} # {"name": is_online}
+        self.workers_in_pool = {}  # {"name": is_online}
         self.allowed_to_talk = True
 
     def get_total_shares(self):
@@ -99,13 +98,16 @@ class worker_dict:
 
     def get_worker_names_in_pool(self):
         return list(self.workers_in_pool.keys())
-    
+
     def get_online_workers_in_pool(self):
-        return [ name for name, is_online in self.workers_in_pool.items() if is_online ]
+        return [
+            name for name, is_online in self.workers_in_pool.items()
+            if is_online
+        ]
 
     def is_worker_in_pool(self, name):
         return name in self.workers_in_pool
-    
+
     def is_worker_online(self, name):
         return self.is_worker_in_pool(name) and self.workers_in_pool[name]
 
@@ -132,12 +134,14 @@ class worker_dict:
             print("dump failed")
 
     def __str__(self):
-        lst = [ (name, value["shares"], value["latest_time"], self.is_worker_online(name), self.is_worker_in_pool(name))for name, value in self.d.items()]
+        lst = [(name, value["shares"], value["latest_time"],
+                self.is_worker_online(name), self.is_worker_in_pool(name))
+               for name, value in self.d.items()]
         lst.sort(key=lambda x: (-x[3], -x[1]))
         msg = ""
         for name, shares, latest_time, is_online, is_in_pool in lst:
             if is_online:
-                msg += ":green_circle:  " 
+                msg += ":green_circle:  "
             elif is_in_pool:
                 msg += ":red_circle:  "
             else:
@@ -155,12 +159,14 @@ class worker_dict:
 workers = worker_dict()
 client = discord.Client()
 
+
 def http_request(url, payload={}):
     r = requests.get(url, params=payload)
     if r.status_code != 200:
         print("Error: HTTP request failed!")
         return None
     return json.loads(r.text)
+
 
 # return data section if on success
 def sparkpool_http_request(url, payload):
@@ -170,10 +176,12 @@ def sparkpool_http_request(url, payload):
         return None
     return res["data"]
 
+
 def fetch_in_pool_workers():
     payload = {'currency': 'ETH', 'miner': eth_wallet}
     data = sparkpool_http_request(pool_api_addr + "/v1/worker/list", payload)
-    return { worker["worker"]: worker["online"] for worker in data } if data is not None else None
+    return {worker["worker"]: worker["online"]
+            for worker in data} if data is not None else None
 
 
 @client.event
@@ -220,14 +228,20 @@ async def on_message(message):
             msg = "Verbose: :red_circle: \n"
         await client.get_channel(channel_id).send(msg)
     if message.content.startswith("$profit"):
-        data = sparkpool_http_request(pool_api_addr + "/v1/bill/stats", {'currency': 'ETH', 'miner': eth_wallet})
+        data = sparkpool_http_request(pool_api_addr + "/v1/bill/stats", {
+            'currency': 'ETH',
+            'miner': eth_wallet
+        })
         if data is None:
             return
         balance = data["balance"]
-        
-        res = http_request("https://api.coingecko.com/api/v3/simple/price", {'ids':'ethereum', 'vs_currencies':'usd,cad,sgd,cny'})
+
+        res = http_request("https://api.coingecko.com/api/v3/simple/price", {
+            'ids': 'ethereum',
+            'vs_currencies': 'usd,cad,sgd,cny'
+        })
         if res is None:
-            return 
+            return
         print(res)
         eth_usd = res["ethereum"]["usd"]
         eth_cad = res["ethereum"]["cad"]
@@ -241,12 +255,17 @@ async def on_message(message):
         gwei_usd = res["normal"]["usd"]
 
         total = workers.get_total_shares()
-        worker_name_shares = [(worker_name, workers.get_worker_shares(worker_name)) for worker_name in workers.get_stored_worker_names()]
+        worker_name_shares = [
+            (worker_name, workers.get_worker_shares(worker_name))
+            for worker_name in workers.get_stored_worker_names()
+        ]
         worker_name_shares.sort(key=lambda x: (-x[1]))
 
-        msg = eth_symbol + ": {}  :fuelpump:: {} gwei ≈ {} USD\n".format(balance, gwei, gwei_usd)
-        msg += "Price: :flag_us:: {} :flag_ca:: {} :flag_sg:: {} :flag_cn:: {}\n".format(eth_usd, eth_cad, eth_sgd, eth_cny)
-        embed = discord.Embed(title="Profit", description= msg)
+        msg = eth_symbol + ": {}  :fuelpump:: {} gwei ≈ {} USD\n".format(
+            balance, gwei, gwei_usd)
+        msg += "Price: :flag_us:: {} :flag_ca:: {} :flag_sg:: {} :flag_cn:: {}\n".format(
+            eth_usd, eth_cad, eth_sgd, eth_cny)
+        embed = discord.Embed(title="Profit", description=msg)
 
         for worker_name, worker_shares in worker_name_shares:
             share_ratio = worker_shares / total
@@ -255,9 +274,16 @@ async def on_message(message):
             cad_profit = eth_cad * eth_profit
             sgd_profit = eth_sgd * eth_profit
             cny_profit = eth_cny * eth_profit
-            value = "{}/{}({:.2f}) shares\n".format(worker_shares, total, share_ratio) + eth_symbol + ": {:.5f} :flag_us:: {:.2f} :flag_ca:: {:.2f} :flag_sg:: {:.2f} :flag_cn:: {:.2f}\n".format(eth_profit, usd_profit, cad_profit, sgd_profit, cny_profit)
+            value = "{}/{}({:.2f}) shares\n".format(
+                worker_shares, total, share_ratio
+            ) + eth_symbol + ": {:.5f} :flag_us:: {:.2f} :flag_ca:: {:.2f} :flag_sg:: {:.2f} :flag_cn:: {:.2f}\n".format(
+                eth_profit, usd_profit, cad_profit, sgd_profit, cny_profit)
             embed.add_field(name=worker_name, inline=False, value=value)
-        embed.add_field(name="\u200B", value="Source: [ETH Gas.watch](http://ethgas.watch) [CoinGecko](https://www.coingecko.com/)")
+        embed.add_field(
+            name="\u200B",
+            value=
+            "Source: [ETH Gas.watch](http://ethgas.watch) [CoinGecko](https://www.coingecko.com/)"
+        )
         await client.get_channel(channel_id).send(embed=embed)
 
 
@@ -269,7 +295,8 @@ async def fetch_data():
         print("Error: HTTP request failed!")
         return
     previous_online = set(workers.get_online_workers_in_pool())
-    latest_online = set([ name for name, is_online in workers_in_pool.items() if is_online ])
+    latest_online = set(
+        [name for name, is_online in workers_in_pool.items() if is_online])
     upline = list(latest_online - previous_online)
     downline = list(previous_online - latest_online)
     msg = ""
@@ -282,7 +309,6 @@ async def fetch_data():
     if msg:
         await client.get_channel(channel_id).send(msg)
     workers.set_workers_in_pool(workers_in_pool)
-
 
     # has change(new/delete/modify) in local_log.json
     has_file_change = False
@@ -297,19 +323,21 @@ async def fetch_data():
             workers.set(name)
             has_file_change = True
             # flush_to_discord = True
-            msg = "{} joined mining for the first time, welcome!\n".format(name)
+            msg = "{} joined mining for the first time, welcome!\n".format(
+                name)
             discord_msg_worker += msg
             res_log_msg_worker += msg
         # else:
-            # msg = "Updates for {}:\n".format(name)
-            # discord_msg_worker += msg
-            # res_log_msg_worker += msg
+        # msg = "Updates for {}:\n".format(name)
+        # discord_msg_worker += msg
+        # res_log_msg_worker += msg
 
         ## get current worker share history
         payload = {'currency': 'ETH', 'miner': eth_wallet, 'worker': name}
-        data = sparkpool_http_request(pool_api_addr + "/v1/worker/sharesHistory", payload)
+        data = sparkpool_http_request(
+            pool_api_addr + "/v1/worker/sharesHistory", payload)
         if data is None:
-            return 
+            return
         # validate all history entry/ remove outdated ones
         history = workers.get_worker_history(name)
         ts_lst = list(history.keys())
@@ -323,7 +351,7 @@ async def fetch_data():
                 if not workers.pop_worker_history_entry(name, ts):
                     print("Error: last_online entry removal failed")
             else:
-            ## check and modify existing entries
+                ## check and modify existing entries
                 new_share = res_history[ts]
                 share_in_record = history[ts]
                 if new_share != share_in_record:
@@ -333,28 +361,30 @@ async def fetch_data():
                     adjustment_delta += new_share - share_in_record
                     workers.set_worker_history_entry(name, ts, new_share)
 
-        if adjustment_log: # has_file_change is true namely
+        if adjustment_log:  # has_file_change is true namely
             msg = ""
             for ts, old_share, new_share in adjustment_log:
                 sign = ""
                 if new_share - old_share >= 0:
                     sign = "+"
-                msg += "        {} shares @ {} adjusted to {}({}{})\n".format(old_share, ts, new_share, sign, new_share - old_share)
-            
+                msg += "        {} shares @ {} adjusted to {}({}{})\n".format(
+                    old_share, ts, new_share, sign, new_share - old_share)
+
             sign = ""
             if adjustment_delta >= 0:
                 sign = "+"
             worker_shares = workers.get_worker_shares(name)
-            msg += "        total adjustment: {}({}{}) -> {}\n".format(worker_shares, sign, adjustment_delta, worker_shares + adjustment_delta)
+            msg += "        total adjustment: {}({}{}) -> {}\n".format(
+                worker_shares, sign, adjustment_delta,
+                worker_shares + adjustment_delta)
             discord_msg_worker += "        adjustment detected:\n" + msg
             res_log_msg_worker += "        adjustment detected\n" + msg
             workers.add_share_update_ts(name, adjustment_delta)
-            
+
             # if workers.allowed_to_talk:
             #     await client.get_channel(channel_id).send(msg)
             # print(msg)
             # res_log_msg += msg + "\n"
-
 
         test_share_sum = 0
         shares_delta = 0
@@ -368,21 +398,25 @@ async def fetch_data():
                 has_file_change = True
                 workers.set_worker_history_entry(name, ts, share)
                 shares_delta += share
-                latest_time = ts if str_to_ts(ts) > str_to_ts(latest_time) else latest_time
+                latest_time = ts if str_to_ts(ts) > str_to_ts(
+                    latest_time) else latest_time
                 msg += "        {} + {} @ {}\n".format(name, share, ts)
-        if msg: # new entry/share detected
+        if msg:  # new entry/share detected
             res_log_msg_worker += "        new share update:\n" + msg
-            msg = "{}'s share: {}( + {}) -> {}\n".format(name, str(workers.get_worker_shares(name)), shares_delta, str(workers.get_worker_shares(name) + shares_delta))
+            msg = "{}'s share: {}( + {}) -> {}\n".format(
+                name, str(workers.get_worker_shares(name)), shares_delta,
+                str(workers.get_worker_shares(name) + shares_delta))
             res_log_msg_worker += msg
-            if shares_delta: # if has change, add to discord message
+            if shares_delta:  # if has change, add to discord message
                 discord_msg_worker += msg
         # print("test share sum {} for {}; ".format(test_share_sum, name), end="", flush=True)
-        
+
         # update anyway
         workers.add_share_update_ts(name, shares_delta, latest_time)
 
         if res_log_msg_worker:
-            res_log_msg += "Updates for {}:\n".format(name) + res_log_msg_worker
+            res_log_msg += "Updates for {}:\n".format(
+                name) + res_log_msg_worker
         if discord_msg_worker:
             discord_msg += discord_msg_worker
 
@@ -395,7 +429,7 @@ async def fetch_data():
         with open("res_log", "a") as res_log:
             res_log.write(res_log_msg)
             res_log.flush()
-        
+
 
 TOKEN = ""
 if not onLocal:
