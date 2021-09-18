@@ -62,10 +62,10 @@ JST = pytz.timezone('Asia/Tokyo')
 NZST = pytz.timezone('Pacific/Auckland')
 eth_symbol = "<:eth:888234376427614228>"
 log_channel = 885966677689401386
-test_channel = 639512541701079073
-test_spark_wallet = "sp_ethereum"
 log_spark_wallet = "sp_startbin"
 sparkpool_api_addr = "https://www.sparkpool.com"
+# test_channel = 639512541701079073
+# test_spark_wallet = "sp_ethereum"
 # test_nano_wallet = "0x7c3d72a477f3d36a34c68990a9e62a48c0331710"
 # nanopool_api_addr = "https://api.nanopool.org/v1/eth/workers/"
 
@@ -82,7 +82,6 @@ def Observerd_to_Normal(o):
         return {key: Observerd_to_Normal(value) for key, value in o.items()}
     return o
 
-
 class worker_dict:
     def __init__(self):
         if eth_wallet not in db:
@@ -91,19 +90,42 @@ class worker_dict:
                 "share_log": {},
                 "user_settings": {}
             }
-        if "share_book" not in db[eth_wallet]:
-            db[eth_wallet]["share_book"] = {}
-        if "share_log" not in db[eth_wallet]:
-            db[eth_wallet]["share_log"] = {}
-        if "user_settings" not in db[eth_wallet]:
-            db[eth_wallet]["user_settings"] = {}
 
-        self.share_book = db[eth_wallet]["share_book"]
-        self.share_log = db[eth_wallet]["share_log"]
-        self.user_settings = db[eth_wallet]["user_settings"]
+        self.share_book = None
+        self.share_log = None
+        self.user_settings = None
+        self.fetch_everything_from_db()
 
         self.workers_in_pool = {}  ## {"name": is_online}
         self.allowed_to_talk = True
+
+    def fetch_everything_from_db(self):
+        self.get_user_settings()
+        self.get_share_book()
+        self.get_share_log()
+    
+    def set_everything_to_db(self):
+        self.set_user_settings()
+        self.set_share_book()
+        self.set_share_log()
+
+    def get_user_settings(self):
+        self.user_settings = db[eth_wallet]["user_settings"]
+
+    def set_user_settings(self):
+        db[eth_wallet]["user_settings"] = self.user_settings
+
+    def get_share_book(self):
+        self.share_book = db[eth_wallet]["share_book"]
+
+    def set_share_book(self):
+        db[eth_wallet]["share_book"] = self.share_book
+    
+    def get_share_log(self):
+        self.share_log = db[eth_wallet]["share_log"]
+
+    def set_share_log(self):
+        db[eth_wallet]["share_log"] = self.share_log
 
     def get_total_shares(self):
         return sum([value["shares"] for _, value in self.share_book.items()])
@@ -200,7 +222,51 @@ class worker_dict:
         msg += ":red_circle:  offline  "
         msg += ":no_entry:  worker removed from SparkPool for 24h inactivity"
         return msg
+    
+    def summary_embed(self):
+        lst = [(name, value["shares"], value["latest_time"],
+                self.is_worker_online(name), self.is_worker_in_pool(name))
+               for name, value in self.share_book.items()]
+        lst.sort(key=lambda x: (-x[3], -x[1]))
 
+        # embed = discord.Embed(
+        #     title = 'Bot'
+        # )
+        msg = ""
+        for name, shares, latest_time, is_online, is_in_pool in lst:
+            if is_online:
+                msg += ":green_circle:  "
+            elif is_in_pool:
+                msg += ":red_circle:  "
+            else:
+                msg += ":no_entry:  "
+            msg += name + " has "
+            msg += str(shares)
+            msg += " shares. Last report time: "
+            msg += ts_to_pretty_str(
+                str_to_ts(latest_time).astimezone(EST)) + " EST\n\n"
+        msg += "NOTE: :green_circle:  online  "
+        msg += ":red_circle:  offline  "
+        msg += ":no_entry:  worker removed from SparkPool for 24h inactivity"
+        return msg
+
+    def user_track_worker(self, user_id, name):
+        user_id = str(user_id)
+        if name not in workers.get_share_book_name_list():
+            return False
+        self.get_user_settings()
+        if name in self.user_settings:
+            if user_id not in self.user_settings[name]:
+                self.user_settings[name].append(user_id)
+        else:
+            self.user_settings[name] = []
+            self.user_settings[name].append(user_id)
+        self.set_user_settings()
+        return True
+    
+    def who_tracks_this_worker(self, name):
+        user_id_str = self.user_settings[name] if name in self.user_settings else []
+        return [int(user_id) for user_id in user_id_str]
 
 def http_request(url, payload={}):
     r = requests.get(url, params=payload)
@@ -361,23 +427,15 @@ async def f_profit(ctx):
 async def f_track(ctx, arg):
     name = arg
     user_id = ctx.message.author.id
-    if name not in workers.get_share_book_name_list():
+    if not workers.user_track_worker(user_id, name):
         await client.get_channel(channel_id).send(f"I cannot find {name}")
-        return
-
-    if name in db[eth_wallet]["user_settings"]:
-        if user_id not in db[eth_wallet]["user_settings"][name]:
-            db[eth_wallet]["user_settings"][name].append(user_id)
-    else:
-        db[eth_wallet]["user_settings"][name] = [user_id]
-
-    user = await client.fetch_user(user_id)
     await client.get_channel(channel_id).send(
-        f"{user.mention} have tracked worker {name}")
+        f"{ctx.message.author.mention} have tracked worker {name}")
 
 
 @tasks.loop(seconds=5)
 async def fetch_data():
+    workers.fetch_everything_from_db()
     ## check and notify online/offline status
     workers_in_pool = fetch_in_pool_workers()
     if workers_in_pool is None:
@@ -395,11 +453,9 @@ async def fetch_data():
     if downline:
         for name in downline:
             msg += ":red_circle:  " + name + " stops mining :(\n\n"
-            if eth_wallet in db and "user_settings" in db[
-                    eth_wallet] and name in db[eth_wallet]["user_settings"]:
-                for user_id in db[eth_wallet]["user_settings"][name]:
-                    user = await client.fetch_user(user_id)
-                    msg += user.mention
+            for user_id in workers.who_tracks_this_worker(name):
+                user = await client.fetch_user(user_id)
+                msg += user.mention
     if msg:
         await client.get_channel(channel_id).send(msg)
     workers.set_workers_in_pool(workers_in_pool)
@@ -521,6 +577,7 @@ async def fetch_data():
             discord_msg += discord_msg_worker
 
     if has_file_change:
+        workers.set_everything_to_db()
         workers.dump_to_file()
     if discord_msg and workers.allowed_to_talk:
         await client.get_channel(channel_id).send(discord_msg)
