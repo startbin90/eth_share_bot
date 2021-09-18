@@ -3,10 +3,11 @@ import requests
 import json
 import os
 from discord.ext import tasks
+from discord.ext import commands
 from datetime import datetime
 import platform
 from replit import db
-
+import replit
 # Json format
 # {
 #   name:
@@ -31,6 +32,7 @@ onLocal = False
 if platform.system() == MACOS:
     onLOcal = True
 
+eth_symbol = "<:eth:888234376427614228>"
 log_channel = 885966677689401386
 test_channel = 639512541701079073
 test_spark_wallet = "sp_ethereum"
@@ -43,14 +45,29 @@ start_ts = ts_to_str(datetime(2021, 9, 1))
 channel_id = log_channel
 eth_wallet = log_spark_wallet
 pool_api_addr = sparkpool_api_addr
-eth_symbol = "<:eth:888234376427614228>"
 
+def Observerd_to_Normal(o):
+    if isinstance(o, replit.database.database.ObservedList):
+        return [Observerd_to_Normal(item) for item in o]
+    if isinstance(o, replit.database.database.ObservedDict):
+        return {key: Observerd_to_Normal(value) for key, value in o.items()}
+    return o
 
 class worker_dict:
-    def __init__(self, d=dict()):
-        self.d = d
-        self.loaded_from_json = False
-        self.workers_in_pool = {}  # {"name": is_online}
+    def __init__(self):
+        # self.loaded_from_json = False
+        if eth_wallet not in db:
+            db[eth_wallet] = {"share_book": {}, "share_log": {}, "user_settings": {}}
+        if "share_book" not in db[eth_wallet]:
+            db[eth_wallet]["share_book"] = {}
+        if "share_log" not in db[eth_wallet]:
+            db[eth_wallet]["share_log"] = {}
+        if "user_settings" not in db[eth_wallet]:
+            db[eth_wallet]["user_settings"] = {}
+
+        self.d = db[eth_wallet]["share_book"]
+        # {"name": is_online}
+        self.workers_in_pool = {}  
         self.allowed_to_talk = True
 
     def get_total_shares(self):
@@ -111,28 +128,29 @@ class worker_dict:
     def is_worker_online(self, name):
         return self.is_worker_in_pool(name) and self.workers_in_pool[name]
 
-    def load_from_json(self):
-        try:
-            with open("local_log.json", "r") as f:
-                s = f.read()
-                self.d = json.loads(s)
-                self.loaded_from_json = True
+    # def load_from_json(self):
+    #     try:
+    #         with open("share_book.json", "r") as f:
+    #             s = f.read()
+    #             dictionary = json.loads(s)
+    #             if eth_wallet not in db:
+    #                 db[eth_wallet] = {"share_book": dictionary, "share_log": []}
+    #             self.d = db[eth_wallet]["share_book"]                
+    #             self.loaded_from_json = True
 
-                # if eth_wallet not in db:
-                #     db[eth_wallet] = {"share_book": self.d, "share_log": []}
-        except:
-            self.d = {}
-            self.loaded_from_json = False
+    #     except:
+    #         self.d = {}
+    #         self.loaded_from_json = False
 
     def dump_to_file(self):
         try:
-            with open("local_log.json", "w") as f:
-                json.dump(self.d, f)
+            with open("share_book.json", "w") as f:
+                json.dump(Observerd_to_Normal(self.d), f)
                 f.flush()
         except Exception as e:
             print(e)
             print("dump failed")
-
+    
     def __str__(self):
         lst = [(name, value["shares"], value["latest_time"],
                 self.is_worker_online(name), self.is_worker_in_pool(name))
@@ -156,8 +174,6 @@ class worker_dict:
         return msg
 
 
-workers = worker_dict()
-client = discord.Client()
 
 
 def http_request(url, payload={}):
@@ -183,108 +199,153 @@ def fetch_in_pool_workers():
     return {worker["worker"]: worker["online"]
             for worker in data} if data is not None else None
 
+workers = worker_dict()
+# client = discord.Client()
+client = commands.Bot(command_prefix='$')
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
-    workers.load_from_json()
+    # workers.load_from_json()
     in_pool_workers = fetch_in_pool_workers()
     workers.set_workers_in_pool(in_pool_workers)
 
-    msg = "\n:white_check_mark: Bot is online. "
-    if workers.loaded_from_json:
-        msg += "I recovered these workers from logfile:\n\n"
-        msg += str(workers) + "\n\n"
-    else:
-        msg += "I didn't found anything from logfile\n\n"
-    msg += "Available commands:\n"
-    msg += "$list     List all workers stat\n"
-    msg += "$v        Verbose, update share increment to the channel\n"
-    msg += "$shutup   Disable share update\n"
-    msg += "$status   Display current setting status\n"
-    msg += "$profit   Calculate profit based on shares\n"
+    msg = "\n:white_check_mark: Bot is online. \n\n"
+    msg += str(workers) + "\n\n"
+    # if workers.loaded_from_json:
+    #     msg += "I recovered these workers from logfile:\n\n"
+    #     msg += str(workers) + "\n\n"
+    # else:
+    #     msg += "I didn't found anything from logfile\n\n"
+    msg += "Type $help for available commands\n"
     await client.get_channel(channel_id).send(msg)
 
     fetch_data.start()
 
 
-@client.event
-async def on_message(message):
-    if message.content.startswith("$list"):
-        msg = str(workers)
-        await client.get_channel(channel_id).send(msg)
-    if message.content.startswith("$v"):
-        workers.allowed_to_talk = True
-        await client.get_channel(channel_id).send("Verbose mode ON")
-    if message.content.startswith("$shutup"):
-        workers.allowed_to_talk = False
-        await client.get_channel(channel_id).send(
-            "Verbose mode OFF, now I shutup :slight_smile: ")
-    if message.content.startswith("$status"):
-        if workers.allowed_to_talk:
-            msg = "Verbose: :green_circle: \n"
-        else:
-            msg = "Verbose: :red_circle: \n"
-        await client.get_channel(channel_id).send(msg)
-    if message.content.startswith("$profit"):
-        data = sparkpool_http_request(pool_api_addr + "/v1/bill/stats", {
-            'currency': 'ETH',
-            'miner': eth_wallet
-        })
-        if data is None:
-            return
-        balance = data["balance"]
+@client.command(
+    name='list',
+    brief='list all worker stat',
+)
+async def f_list(ctx):
+    msg = str(workers)
+    await client.get_channel(channel_id).send(msg)
 
-        res = http_request("https://api.coingecko.com/api/v3/simple/price", {
-            'ids': 'ethereum',
-            'vs_currencies': 'usd,cad,sgd,cny'
-        })
-        if res is None:
-            return
-        print(res)
-        eth_usd = res["ethereum"]["usd"]
-        eth_cad = res["ethereum"]["cad"]
-        eth_sgd = res["ethereum"]["sgd"]
-        eth_cny = res["ethereum"]["cny"]
 
-        res = http_request("http://ethgas.watch/api/gas")
-        if res is None:
-            return
-        gwei = res["normal"]["gwei"]
-        gwei_usd = res["normal"]["usd"]
+@client.command(
+    name='v',
+    brief='verbose, update share increment to the channel',
+)
+async def f_verbose(ctx):
+    workers.allowed_to_talk = True
+    await client.get_channel(channel_id).send("Verbose mode ON")
 
-        total = workers.get_total_shares()
-        worker_name_shares = [
-            (worker_name, workers.get_worker_shares(worker_name))
-            for worker_name in workers.get_stored_worker_names()
-        ]
-        worker_name_shares.sort(key=lambda x: (-x[1]))
 
-        msg = eth_symbol + ": {}  :fuelpump:: {} gwei ≈ {} USD\n".format(
-            balance, gwei, gwei_usd)
-        msg += "Price: :flag_us:: {} :flag_ca:: {} :flag_sg:: {} :flag_cn:: {}\n".format(
-            eth_usd, eth_cad, eth_sgd, eth_cny)
-        embed = discord.Embed(title="Profit", description=msg)
+@client.command(
+    name='shutup',
+    brief='disable share update',
+)
+async def f_shutup(ctx):
+    workers.allowed_to_talk = False
+    await client.get_channel(channel_id).send(
+        "Verbose mode OFF, now I shutup :slight_smile: ")
 
-        for worker_name, worker_shares in worker_name_shares:
-            share_ratio = worker_shares / total
-            eth_profit = balance * share_ratio
-            usd_profit = eth_usd * eth_profit
-            cad_profit = eth_cad * eth_profit
-            sgd_profit = eth_sgd * eth_profit
-            cny_profit = eth_cny * eth_profit
-            value = "{}/{}({:.2f}) shares\n".format(
-                worker_shares, total, share_ratio
-            ) + eth_symbol + ": {:.5f} :flag_us:: {:.2f} :flag_ca:: {:.2f} :flag_sg:: {:.2f} :flag_cn:: {:.2f}\n".format(
-                eth_profit, usd_profit, cad_profit, sgd_profit, cny_profit)
-            embed.add_field(name=worker_name, inline=False, value=value)
-        embed.add_field(
-            name="\u200B",
-            value=
-            "Source: [ETH Gas.watch](http://ethgas.watch) [CoinGecko](https://www.coingecko.com/)"
-        )
-        await client.get_channel(channel_id).send(embed=embed)
+
+@client.command(
+    name='status',
+    brief='display current setting status',
+)
+async def f_status(ctx):
+    if workers.allowed_to_talk:
+        msg = "Verbose: :green_circle: \n"
+    else:
+        msg = "Verbose: :red_circle: \n"
+    await client.get_channel(channel_id).send(msg)
+
+
+@client.command(
+    name='profit',
+    brief='calculate estimated profit(not final profit) based on shares',
+)
+async def f_profit(ctx):
+    data = sparkpool_http_request(pool_api_addr + "/v1/bill/stats", {
+        'currency': 'ETH',
+        'miner': eth_wallet
+    })
+    if data is None:
+        return
+    balance = data["balance"]
+
+    res = http_request("https://api.coingecko.com/api/v3/simple/price", {
+        'ids': 'ethereum',
+        'vs_currencies': 'usd,cad,sgd,cny'
+    })
+    if res is None:
+        return
+    eth_usd = res["ethereum"]["usd"]
+    eth_cad = res["ethereum"]["cad"]
+    eth_sgd = res["ethereum"]["sgd"]
+    eth_cny = res["ethereum"]["cny"]
+
+    res = http_request("http://ethgas.watch/api/gas")
+    if res is None:
+        return
+    gwei = res["normal"]["gwei"]
+    gwei_usd = res["normal"]["usd"]
+
+    total = workers.get_total_shares()
+    worker_name_shares = [
+        (worker_name, workers.get_worker_shares(worker_name))
+        for worker_name in workers.get_stored_worker_names()
+    ]
+    worker_name_shares.sort(key=lambda x: (-x[1]))
+
+    msg = eth_symbol + ": {}  :fuelpump:: {} gwei ≈ {} USD\n".format(
+        balance, gwei, gwei_usd)
+    msg += "Price: :flag_us:: {} :flag_ca:: {} :flag_sg:: {} :flag_cn:: {}\n".format(
+        eth_usd, eth_cad, eth_sgd, eth_cny)
+    embed = discord.Embed(title="Estimated Profit(This is Not Our Final Profit)", description=msg)
+
+    for worker_name, worker_shares in worker_name_shares:
+        share_ratio = worker_shares / total
+        eth_profit = balance * share_ratio
+        usd_profit = eth_usd * eth_profit
+        cad_profit = eth_cad * eth_profit
+        sgd_profit = eth_sgd * eth_profit
+        cny_profit = eth_cny * eth_profit
+        value = "{}/{}({:.2f}) shares\n".format(
+            worker_shares, total, share_ratio
+        ) + eth_symbol + ": {:.5f} :flag_us:: {:.2f} :flag_ca:: {:.2f} :flag_sg:: {:.2f} :flag_cn:: {:.2f}\n".format(
+            eth_profit, usd_profit, cad_profit, sgd_profit, cny_profit)
+        embed.add_field(name=worker_name, inline=False, value=value)
+    embed.add_field(
+        name="\u200B",
+        value=
+        "Source: [ETH Gas.watch](http://ethgas.watch) [CoinGecko](https://www.coingecko.com/)"
+    )
+    await client.get_channel(channel_id).send(embed=embed)
+
+@client.command(
+    name='track',
+    brief='track a worker',
+    help='You will be mentioned if <arg> worker goes online/offline by tracking the <arg> miner.',
+)
+async def f_track(ctx, arg):
+    name = arg
+    user_id = ctx.message.author.id
+    if name not in workers.get_stored_worker_names():
+        await client.get_channel(channel_id).send(f"I cannot find {name}")
+        return
+
+    if name in db[eth_wallet]["user_settings"]:
+        if user_id not in db[eth_wallet]["user_settings"][name]:
+            db[eth_wallet]["user_settings"][name].append(user_id)
+    else:
+        db[eth_wallet]["user_settings"][name] = [user_id]
+    
+    user = await client.fetch_user(user_id)
+    await client.get_channel(channel_id).send(f"{user.mention} have tracked {name}")
 
 
 @tasks.loop(seconds=5)
@@ -306,16 +367,26 @@ async def fetch_data():
     if downline:
         for name in downline:
             msg += ":red_circle:  " + name + " stops mining :(\n\n"
+            if eth_wallet in db and "user_settings" in db[eth_wallet] and name in db[eth_wallet]["user_settings"]:
+                for user_id in db[eth_wallet]["user_settings"][name]:
+                    user = await client.fetch_user(user_id)
+                    msg += user.mention
     if msg:
         await client.get_channel(channel_id).send(msg)
     workers.set_workers_in_pool(workers_in_pool)
 
-    # has change(new/delete/modify) in local_log.json
+    # has change(new/delete/modify) in share_book.json
     has_file_change = False
     # flush_to_discord = True
     discord_msg = ""
     res_log_msg = ""
     for name in workers.get_worker_names_in_pool():
+        
+        # share_log = db[eth_wallet]["share_log"]
+        # if name not in share_log:
+        #     share_log[name] = []
+        # worker_log_lst = share_log[name]
+
         discord_msg_worker = ""
         res_log_msg_worker = ""
         ## init new worker if found
