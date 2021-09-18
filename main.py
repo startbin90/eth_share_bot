@@ -8,13 +8,33 @@ from datetime import datetime
 import platform
 from replit import db
 import replit
-# Json format
+import pytz
+# db format
 # {
-#   name:
-#     { "shares": 0,
-#       "latest_time": start_ts,
+#   wallet1:{
+#     share_book: {
+#       worker: {
+#         shares: int,
+#         latest_time: ts,
+#         history: { ts: share_num }
+#       }
 #     },
+#
+#     share_log: {
+#       ...
+#     },
+#
+#     user_settings: {
+#       global_setting: value,
+#       woker_name: [user_ids]
+#     }
+#   },
+#
+#   wallet2: {
+#    ...
+#   }
 # }
+#
 
 
 def str_to_ts(s):
@@ -25,6 +45,10 @@ def ts_to_str(ts):
     return ts.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
 
+def ts_to_pretty_str(ts):
+    return ts.strftime("%m-%d %H:%M")
+
+
 MACOS = 'Darwin'
 LINUX = 'Linux'
 WIN = 'Windows'
@@ -32,6 +56,10 @@ onLocal = False
 if platform.system() == MACOS:
     onLOcal = True
 
+PST = pytz.timezone('US/Pacific')
+EST = pytz.timezone('US/Eastern')
+JST = pytz.timezone('Asia/Tokyo')
+NZST = pytz.timezone('Pacific/Auckland')
 eth_symbol = "<:eth:888234376427614228>"
 log_channel = 885966677689401386
 test_channel = 639512541701079073
@@ -46,6 +74,7 @@ channel_id = log_channel
 eth_wallet = log_spark_wallet
 pool_api_addr = sparkpool_api_addr
 
+
 def Observerd_to_Normal(o):
     if isinstance(o, replit.database.database.ObservedList):
         return [Observerd_to_Normal(item) for item in o]
@@ -53,11 +82,15 @@ def Observerd_to_Normal(o):
         return {key: Observerd_to_Normal(value) for key, value in o.items()}
     return o
 
+
 class worker_dict:
     def __init__(self):
-        # self.loaded_from_json = False
         if eth_wallet not in db:
-            db[eth_wallet] = {"share_book": {}, "share_log": {}, "user_settings": {}}
+            db[eth_wallet] = {
+                "share_book": {},
+                "share_log": {},
+                "user_settings": {}
+            }
         if "share_book" not in db[eth_wallet]:
             db[eth_wallet]["share_book"] = {}
         if "share_log" not in db[eth_wallet]:
@@ -65,53 +98,59 @@ class worker_dict:
         if "user_settings" not in db[eth_wallet]:
             db[eth_wallet]["user_settings"] = {}
 
-        self.d = db[eth_wallet]["share_book"]
-        # {"name": is_online}
-        self.workers_in_pool = {}  
+        self.share_book = db[eth_wallet]["share_book"]
+        self.share_log = db[eth_wallet]["share_log"]
+        self.user_settings = db[eth_wallet]["user_settings"]
+
+        self.workers_in_pool = {}  ## {"name": is_online}
         self.allowed_to_talk = True
 
     def get_total_shares(self):
-        return sum([value["shares"] for _, value in self.d.items()])
+        return sum([value["shares"] for _, value in self.share_book.items()])
 
-    def get_stored_worker_names(self):
-        return list(self.d.keys())
+    def get_share_book_name_list(self):
+        return list(self.share_book.keys())
 
     def get_worker_shares(self, worker):
-        if worker in self.d:
-            return self.d[worker]["shares"]
+        if worker in self.share_book:
+            return self.share_book[worker]["shares"]
 
     def get_worker_latest_time(self, name):
-        if name in self.d:
-            return self.d[name]["latest_time"]
+        if name in self.share_book:
+            return self.share_book[name]["latest_time"]
 
-    def get_worker_history(self, name):
-        if name in self.d and "history" in self.d[name]:
-            return self.d[name]["history"]
+    def get_worker_history_dict(self, name):
+        if name in self.share_book and "history" in self.share_book[name]:
+            return self.share_book[name]["history"]
 
     def pop_worker_history_entry(self, name, ts):
-        if name in self.d and "history" in self.d[name]:
-            ret = self.d[name]["history"].pop(ts, None)
+        if name in self.share_book and "history" in self.share_book[name]:
+            ret = self.share_book[name]["history"].pop(ts, None)
             return True if ret != None else False
         else:
             return False
 
     def set_worker_history_entry(self, name, ts, shares):
-        if name in self.d and "history" in self.d[name]:
-            self.d[name]["history"][ts] = shares
+        if name in self.share_book and "history" in self.share_book[name]:
+            self.share_book[name]["history"][ts] = shares
         else:
             return None
 
-    def set(self, name, shares=0, ts=start_ts):
-        self.d[name] = {"shares": shares, "latest_time": ts, "history": {}}
+    def set_share_ts(self, name, shares=0, ts=start_ts):
+        self.share_book[name] = {
+            "shares": shares,
+            "latest_time": ts,
+            "history": {}
+        }
 
     def add_share_update_ts(self, name, new_shares, ts=None):
-        if name in self.d:
-            self.d[name]["shares"] += new_shares
+        if name in self.share_book:
+            self.share_book[name]["shares"] += new_shares
             if ts:
-                self.d[name]["latest_time"] = ts
+                self.share_book[name]["latest_time"] = ts
 
-    def set_workers_in_pool(self, d):
-        self.workers_in_pool = d
+    def set_workers_in_pool(self, workers):
+        self.workers_in_pool = workers
 
     def get_worker_names_in_pool(self):
         return list(self.workers_in_pool.keys())
@@ -128,33 +167,21 @@ class worker_dict:
     def is_worker_online(self, name):
         return self.is_worker_in_pool(name) and self.workers_in_pool[name]
 
-    # def load_from_json(self):
-    #     try:
-    #         with open("share_book.json", "r") as f:
-    #             s = f.read()
-    #             dictionary = json.loads(s)
-    #             if eth_wallet not in db:
-    #                 db[eth_wallet] = {"share_book": dictionary, "share_log": []}
-    #             self.d = db[eth_wallet]["share_book"]                
-    #             self.loaded_from_json = True
-
-    #     except:
-    #         self.d = {}
-    #         self.loaded_from_json = False
-
     def dump_to_file(self):
         try:
             with open("share_book.json", "w") as f:
-                json.dump(Observerd_to_Normal(self.d), f)
-                f.flush()
+                json.dump(Observerd_to_Normal(self.share_book), f)
+            with open("share_log.json", "w") as f:
+                json.dump(Observerd_to_Normal(self.share_log), f)
+            with open("user_settings.json", "w") as f:
+                json.dump(Observerd_to_Normal(self.user_settings), f)
         except Exception as e:
-            print(e)
-            print("dump failed")
-    
+            print(e + " dump failed")
+
     def __str__(self):
         lst = [(name, value["shares"], value["latest_time"],
                 self.is_worker_online(name), self.is_worker_in_pool(name))
-               for name, value in self.d.items()]
+               for name, value in self.share_book.items()]
         lst.sort(key=lambda x: (-x[3], -x[1]))
         msg = ""
         for name, shares, latest_time, is_online, is_in_pool in lst:
@@ -167,13 +194,12 @@ class worker_dict:
             msg += name + " has "
             msg += str(shares)
             msg += " shares. Last report time: "
-            msg += str(latest_time) + "\n\n"
+            msg += ts_to_pretty_str(
+                str_to_ts(latest_time).astimezone(EST)) + " EST\n\n"
         msg += "NOTE: :green_circle:  online  "
         msg += ":red_circle:  offline  "
         msg += ":no_entry:  worker removed from SparkPool for 24h inactivity"
         return msg
-
-
 
 
 def http_request(url, payload={}):
@@ -199,9 +225,11 @@ def fetch_in_pool_workers():
     return {worker["worker"]: worker["online"]
             for worker in data} if data is not None else None
 
+
 workers = worker_dict()
 # client = discord.Client()
 client = commands.Bot(command_prefix='$')
+
 
 @client.event
 async def on_ready():
@@ -213,11 +241,6 @@ async def on_ready():
 
     msg = "\n:white_check_mark: Bot is online. \n\n"
     msg += str(workers) + "\n\n"
-    # if workers.loaded_from_json:
-    #     msg += "I recovered these workers from logfile:\n\n"
-    #     msg += str(workers) + "\n\n"
-    # else:
-    #     msg += "I didn't found anything from logfile\n\n"
     msg += "Type $help for available commands\n"
     await client.get_channel(channel_id).send(msg)
 
@@ -297,7 +320,7 @@ async def f_profit(ctx):
     total = workers.get_total_shares()
     worker_name_shares = [
         (worker_name, workers.get_worker_shares(worker_name))
-        for worker_name in workers.get_stored_worker_names()
+        for worker_name in workers.get_share_book_name_list()
     ]
     worker_name_shares.sort(key=lambda x: (-x[1]))
 
@@ -305,7 +328,9 @@ async def f_profit(ctx):
         balance, gwei, gwei_usd)
     msg += "Price: :flag_us:: {} :flag_ca:: {} :flag_sg:: {} :flag_cn:: {}\n".format(
         eth_usd, eth_cad, eth_sgd, eth_cny)
-    embed = discord.Embed(title="Estimated Profit(This is Not Our Final Profit)", description=msg)
+    embed = discord.Embed(
+        title="Estimated Profit(This is Not Our Final Profit)",
+        description=msg)
 
     for worker_name, worker_shares in worker_name_shares:
         share_ratio = worker_shares / total
@@ -326,15 +351,17 @@ async def f_profit(ctx):
     )
     await client.get_channel(channel_id).send(embed=embed)
 
+
 @client.command(
     name='track',
     brief='track a worker',
-    help='You will be mentioned if <arg> worker goes online/offline by tracking the <arg> miner.',
+    help=
+    'You will be mentioned if <arg> worker goes online/offline by tracking the <arg> miner.',
 )
 async def f_track(ctx, arg):
     name = arg
     user_id = ctx.message.author.id
-    if name not in workers.get_stored_worker_names():
+    if name not in workers.get_share_book_name_list():
         await client.get_channel(channel_id).send(f"I cannot find {name}")
         return
 
@@ -343,9 +370,10 @@ async def f_track(ctx, arg):
             db[eth_wallet]["user_settings"][name].append(user_id)
     else:
         db[eth_wallet]["user_settings"][name] = [user_id]
-    
+
     user = await client.fetch_user(user_id)
-    await client.get_channel(channel_id).send(f"{user.mention} have tracked {name}")
+    await client.get_channel(channel_id).send(
+        f"{user.mention} have tracked worker {name}")
 
 
 @tasks.loop(seconds=5)
@@ -367,7 +395,8 @@ async def fetch_data():
     if downline:
         for name in downline:
             msg += ":red_circle:  " + name + " stops mining :(\n\n"
-            if eth_wallet in db and "user_settings" in db[eth_wallet] and name in db[eth_wallet]["user_settings"]:
+            if eth_wallet in db and "user_settings" in db[
+                    eth_wallet] and name in db[eth_wallet]["user_settings"]:
                 for user_id in db[eth_wallet]["user_settings"][name]:
                     user = await client.fetch_user(user_id)
                     msg += user.mention
@@ -381,7 +410,7 @@ async def fetch_data():
     discord_msg = ""
     res_log_msg = ""
     for name in workers.get_worker_names_in_pool():
-        
+
         # share_log = db[eth_wallet]["share_log"]
         # if name not in share_log:
         #     share_log[name] = []
@@ -390,8 +419,8 @@ async def fetch_data():
         discord_msg_worker = ""
         res_log_msg_worker = ""
         ## init new worker if found
-        if name not in workers.get_stored_worker_names():
-            workers.set(name)
+        if name not in workers.get_share_book_name_list():
+            workers.set_share_ts(name)
             has_file_change = True
             # flush_to_discord = True
             msg = "{} joined mining for the first time, welcome!\n".format(
@@ -410,7 +439,7 @@ async def fetch_data():
         if data is None:
             return
         # validate all history entry/ remove outdated ones
-        history = workers.get_worker_history(name)
+        history = workers.get_worker_history_dict(name)
         ts_lst = list(history.keys())
         res_history = {entry["time"]: entry["validShares"] for entry in data}
         adjustment_log = []
