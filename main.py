@@ -82,6 +82,7 @@ def Observerd_to_Normal(o):
         return {key: Observerd_to_Normal(value) for key, value in o.items()}
     return o
 
+
 class worker_dict:
     def __init__(self):
         if eth_wallet not in db:
@@ -103,7 +104,7 @@ class worker_dict:
         self.get_user_settings()
         self.get_share_book()
         self.get_share_log()
-    
+
     def set_everything_to_db(self):
         self.set_user_settings()
         self.set_share_book()
@@ -120,7 +121,7 @@ class worker_dict:
 
     def set_share_book(self):
         db[eth_wallet]["share_book"] = self.share_book
-    
+
     def get_share_log(self):
         self.share_log = db[eth_wallet]["share_log"]
 
@@ -222,33 +223,36 @@ class worker_dict:
         msg += ":red_circle:  offline  "
         msg += ":no_entry:  worker removed from SparkPool for 24h inactivity"
         return msg
-    
+
     def summary_embed(self):
         lst = [(name, value["shares"], value["latest_time"],
                 self.is_worker_online(name), self.is_worker_in_pool(name))
                for name, value in self.share_book.items()]
         lst.sort(key=lambda x: (-x[3], -x[1]))
 
-        # embed = discord.Embed(
-        #     title = 'Bot'
-        # )
-        msg = ""
+        embed = discord.Embed(
+            title='Worker Status',
+        )
         for name, shares, latest_time, is_online, is_in_pool in lst:
+            status = ""
             if is_online:
-                msg += ":green_circle:  "
+                status += ":green_circle:  "
             elif is_in_pool:
-                msg += ":red_circle:  "
+                status += ":red_circle:  "
             else:
-                msg += ":no_entry:  "
-            msg += name + " has "
-            msg += str(shares)
-            msg += " shares. Last report time: "
-            msg += ts_to_pretty_str(
-                str_to_ts(latest_time).astimezone(EST)) + " EST\n\n"
-        msg += "NOTE: :green_circle:  online  "
-        msg += ":red_circle:  offline  "
-        msg += ":no_entry:  worker removed from SparkPool for 24h inactivity"
-        return msg
+                status += ":no_entry:  "
+            status += name
+
+            value = "Share: " + str(shares) + '\n'
+            value += "last seen: "
+            value += ts_to_pretty_str(
+                str_to_ts(latest_time).astimezone(EST)) + " EST"
+            embed.add_field(name=status, inline=True, value=value)
+        note = "NOTE: :green_circle:  online  "
+        note += ":red_circle:  offline  "
+        note += ":no_entry:  worker removed from SparkPool for 24h inactivity"
+        embed.add_field(name="\u200B", inline=False, value=note)
+        return embed
 
     def user_track_worker(self, user_id, name):
         user_id = str(user_id)
@@ -263,10 +267,20 @@ class worker_dict:
             self.user_settings[name].append(user_id)
         self.set_user_settings()
         return True
-    
+
     def who_tracks_this_worker(self, name):
-        user_id_str = self.user_settings[name] if name in self.user_settings else []
+        user_id_str = self.user_settings[
+            name] if name in self.user_settings else []
         return [int(user_id) for user_id in user_id_str]
+    
+    def workers_user_tracked(self, user_id):
+        user_id = str(user_id)
+        ret = []
+        for key, value in self.user_settings.items():
+            if key in self.get_share_book_name_list() and user_id in value:
+                ret.append(key)
+        return ret
+
 
 def http_request(url, payload={}):
     r = requests.get(url, params=payload)
@@ -305,21 +319,21 @@ async def on_ready():
     in_pool_workers = fetch_in_pool_workers()
     workers.set_workers_in_pool(in_pool_workers)
 
-    msg = "\n:white_check_mark: Bot is online. \n\n"
-    msg += str(workers) + "\n\n"
+    msg = ":white_check_mark: Bot is online.\n"
     msg += "Type $help for available commands\n"
-    await client.get_channel(channel_id).send(msg)
+    embed = workers.summary_embed()
+    await client.get_channel(channel_id).send(msg, embed=embed)
 
     fetch_data.start()
 
 
 @client.command(
-    name='list',
+    name='ls',
     brief='list all worker stat',
 )
 async def f_list(ctx):
-    msg = str(workers)
-    await client.get_channel(channel_id).send(msg)
+    embed = workers.summary_embed()
+    await client.get_channel(channel_id).send(embed=embed)
 
 
 @client.command(
@@ -342,10 +356,10 @@ async def f_shutup(ctx):
 
 
 @client.command(
-    name='status',
-    brief='display current setting status',
+    name='settings',
+    brief='display current settings',
 )
-async def f_status(ctx):
+async def f_settings(ctx):
     if workers.allowed_to_talk:
         msg = "Verbose: :green_circle: \n"
     else:
@@ -424,12 +438,19 @@ async def f_profit(ctx):
     help=
     'You will be mentioned if <arg> worker goes online/offline by tracking the <arg> miner.',
 )
-async def f_track(ctx, arg):
-    name = arg
+async def f_track(ctx, name: str=None):
     user_id = ctx.message.author.id
-    if not workers.user_track_worker(user_id, name):
+    if name is None:
+        workers_lst = workers.workers_user_tracked(user_id)
+        msg = f"{ctx.message.author.mention} have tracked "
+        for name in workers_lst:
+            msg += name + " "
+        await client.get_channel(channel_id).send(msg)
+    elif not workers.user_track_worker(user_id, name):
         await client.get_channel(channel_id).send(f"I cannot find {name}")
-    await client.get_channel(channel_id).send(
+        return
+    else:
+        await client.get_channel(channel_id).send(
         f"{ctx.message.author.mention} have tracked worker {name}")
 
 
@@ -449,13 +470,16 @@ async def fetch_data():
     msg = ""
     if upline:
         for name in upline:
-            msg += ":green_circle:  " + name + " starts mining :)\n\n"
+            msg += ":construction_worker:  " + name + " starts mining\n"
     if downline:
         for name in downline:
-            msg += ":red_circle:  " + name + " stops mining :(\n\n"
-            for user_id in workers.who_tracks_this_worker(name):
+            trackers = workers.who_tracks_this_worker(name)
+            if trackers:
+                msg += "Yo, "
+            for user_id in trackers:
                 user = await client.fetch_user(user_id)
-                msg += user.mention
+                msg += user.mention + " "
+            msg += "\n:red_circle:  " + name + " stops mining :(\n"
     if msg:
         await client.get_channel(channel_id).send(msg)
     workers.set_workers_in_pool(workers_in_pool)
