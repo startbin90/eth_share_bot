@@ -454,7 +454,7 @@ async def f_track(ctx, name: str=None):
         f"{ctx.message.author.mention} have tracked worker {name}")
 
 
-@tasks.loop(seconds=5)
+@tasks.loop(seconds=30)
 async def fetch_data():
     workers.fetch_everything_from_db()
     ## check and notify online/offline status
