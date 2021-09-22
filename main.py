@@ -48,6 +48,13 @@ def ts_to_str(ts):
 def ts_to_pretty_str(ts):
     return ts.strftime("%m-%d %H:%M")
 
+def str_hashrate_to_pretty(hashrate):
+    hashrate = int(hashrate)
+    if hashrate // 1000000 > 0:
+        return "{:.2f} MH/s".format(hashrate / 1000000)
+    if hashrate // 1000 > 0:
+        return "{:.2f} KH/s".format(hashrate / 1000)
+    return "{} H/s".format(hashrate)    
 
 MACOS = 'Darwin'
 LINUX = 'Linux'
@@ -569,23 +576,27 @@ async def fetch_data():
         test_share_sum = 0
         shares_delta = 0
         latest_time = workers.get_worker_latest_time(name)
+        latest_hashrate = 0
         msg = ""
         for entry in data:
             ts = entry["time"]
             share = entry["validShares"]
+            hashrate = entry["localHashrate"]
             test_share_sum += share
             if str_to_ts(ts) > str_to_ts(workers.get_worker_latest_time(name)):
                 has_file_change = True
                 workers.set_worker_history_entry(name, ts, share)
                 shares_delta += share
-                latest_time = ts if str_to_ts(ts) > str_to_ts(
-                    latest_time) else latest_time
+                if str_to_ts(ts) > str_to_ts(latest_time):
+                    latest_time = ts
+                    latest_hashrate = hashrate
                 msg += "        {} + {} @ {}\n".format(name, share, ts)
         if msg:  # new entry/share detected
             res_log_msg_worker += "        new share update:\n" + msg
-            msg = "{}'s share: {}( + {}) -> {}\n".format(
+            msg = "{}'s share: {}( + {}) -> {}".format(
                 name, str(workers.get_worker_shares(name)), shares_delta,
                 str(workers.get_worker_shares(name) + shares_delta))
+            msg += ", local hashrate: " + str_hashrate_to_pretty(latest_hashrate) + "\n"
             res_log_msg_worker += msg
             if shares_delta:  # if has change, add to discord message
                 discord_msg_worker += msg
