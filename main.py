@@ -69,7 +69,7 @@ JST = pytz.timezone('Asia/Tokyo')
 NZST = pytz.timezone('Pacific/Auckland')
 eth_symbol = "<:eth:888234376427614228>"
 log_channel = 885966677689401386
-log_spark_wallet = "sp_startbin"
+log_spark_wallet = "sp_kencopco"
 sparkpool_api_addr = "https://www.sparkpool.com"
 # test_channel = 639512541701079073
 # test_spark_wallet = "sp_ethereum"
@@ -80,7 +80,7 @@ start_ts = ts_to_str(datetime(2021, 9, 1))
 channel_id = log_channel
 eth_wallet = log_spark_wallet
 pool_api_addr = sparkpool_api_addr
-
+load_source = 0 # 0 for json; 1 for replit db
 
 def Observerd_to_Normal(o):
     if isinstance(o, replit.database.database.ObservedList):
@@ -92,18 +92,22 @@ def Observerd_to_Normal(o):
 
 class worker_dict:
     def __init__(self):
-        if eth_wallet not in db:
-            db[eth_wallet] = {
-                "share_book": {},
-                "share_log": {},
-                "user_settings": {}
-            }
+        if load_source == 1:
+            if eth_wallet not in db:
+                db[eth_wallet] = {
+                    "share_book": {},
+                    "share_log": {},
+                    "user_settings": {}
+                }
 
-        self.share_book = None
-        self.share_log = None
-        self.user_settings = None
-        self.fetch_everything_from_db()
-
+            self.share_book = None
+            self.share_log = None
+            self.user_settings = None
+            self.fetch_everything_from_db()
+        elif load_source == 0:
+            self.load_from_json()
+        else:
+            raise Exception("invalid load source")
         self.workers_in_pool = {}  ## {"name": is_online}
         self.allowed_to_talk = True
 
@@ -197,6 +201,17 @@ class worker_dict:
     def is_worker_online(self, name):
         return self.is_worker_in_pool(name) and self.workers_in_pool[name]
 
+    def load_from_json(self):
+        with open("share_book.json", "r") as f:
+            s = f.read()
+            self.share_book = json.loads(s)
+        with open("share_log.json", "r") as f:
+            s = f.read()
+            self.share_log = json.loads(s)
+        with open("user_settings.json", "r") as f:
+            s = f.read()
+            self.user_settings = json.loads(s)
+            
     def dump_to_file(self):
         try:
             with open("share_book.json", "w") as f:
@@ -238,7 +253,7 @@ class worker_dict:
         lst.sort(key=lambda x: (-x[3], -x[1]))
 
         embed = discord.Embed(
-            title='Worker Status',
+            title=eth_wallet,
         )
         for name, shares, latest_time, is_online, is_in_pool in lst:
             status = ""
@@ -378,14 +393,17 @@ async def f_settings(ctx):
     name='profit',
     brief='calculate estimated profit(not final profit) based on shares',
 )
-async def f_profit(ctx):
+async def f_profit(ctx, received: float=None):
     data = sparkpool_http_request(pool_api_addr + "/v1/bill/stats", {
         'currency': 'ETH',
         'miner': eth_wallet
     })
     if data is None:
         return
-    balance = data["balance"]
+    if received is not None:
+        balance = received
+    else:
+        balance = data["balance"]
 
     res = http_request("https://api.coingecko.com/api/v3/simple/price", {
         'ids': 'ethereum',
@@ -463,7 +481,9 @@ async def f_track(ctx, name: str=None):
 
 @tasks.loop(seconds=30)
 async def fetch_data():
-    workers.fetch_everything_from_db()
+    if load_source == 1:
+        workers.fetch_everything_from_db()
+        
     ## check and notify online/offline status
     workers_in_pool = fetch_in_pool_workers()
     if workers_in_pool is None:
@@ -564,7 +584,7 @@ async def fetch_data():
             msg += "        total adjustment: {}({}{}) -> {}\n".format(
                 worker_shares, sign, adjustment_delta,
                 worker_shares + adjustment_delta)
-            discord_msg_worker += "        adjustment detected:\n" + msg
+            discord_msg_worker += f"{name} adjustment detected:\n" + msg
             res_log_msg_worker += "        adjustment detected\n" + msg
             workers.add_share_update_ts(name, adjustment_delta)
 
@@ -612,7 +632,8 @@ async def fetch_data():
             discord_msg += discord_msg_worker
 
     if has_file_change:
-        workers.set_everything_to_db()
+        if load_source == 1:
+            workers.set_everything_to_db()
         workers.dump_to_file()
     if discord_msg and workers.allowed_to_talk:
         await client.get_channel(channel_id).send(discord_msg)
@@ -627,7 +648,7 @@ TOKEN = ""
 if not onLocal:
     from keep_alive import keep_alive
     keep_alive()
-    TOKEN += os.getenv("TOKEN")
+    TOKEN += os.getenv("DISCORD_TOKEN")
 else:
     with open("../discord_bot_token", "r") as f:
         TOKEN += f.read()
